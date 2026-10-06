@@ -68,6 +68,9 @@ if ! command -v git >/dev/null 2>&1; then
     exit 1
 fi
 
+# Ensure Git safe directory (prevents dubious ownership error if executed with root/pkexec)
+git config --global --add safe.directory "${SCRIPT_DIR}" 2>/dev/null || true
+
 # 2. Check Git User Identity
 GIT_USER=$(git config user.name 2>/dev/null || true)
 GIT_EMAIL=$(git config user.email 2>/dev/null || true)

@@ -4,6 +4,7 @@ Runs .sh scripts asynchronously with live output capture and optional root eleva
 """
 
 import os
+import shlex
 import signal
 import subprocess
 import threading
@@ -84,8 +85,24 @@ class ScriptRunner:
         # Build Command
         args = args_list or []
         if as_admin:
-            # pkexec launches PolicyKit GUI authentication
-            cmd = ["/usr/bin/pkexec", "/bin/bash", str(script)] + args
+            # pkexec launches PolicyKit GUI authentication.
+            # To ensure git commands and askpass helper work under root if needed,
+            # we invoke bash with safe.directory and forwarded credentials
+            wrapper = "git config --global --add safe.directory '*' 2>/dev/null || true; "
+            if inject_github:
+                user = self.settings.get("github_username", "").strip()
+                token = self.settings.get("github_token", "").strip()
+                email = self.settings.get("github_email", "").strip()
+                wrapper += (
+                    f"export MINT_GIT_USER={shlex.quote(user)} MINT_GIT_TOKEN={shlex.quote(token)} "
+                    f"GITHUB_USER={shlex.quote(user)} GITHUB_TOKEN={shlex.quote(token)} "
+                    f"GIT_AUTHOR_NAME={shlex.quote(user)} GIT_AUTHOR_EMAIL={shlex.quote(email)} "
+                    f"GIT_COMMITTER_NAME={shlex.quote(user)} GIT_COMMITTER_EMAIL={shlex.quote(email)} "
+                    f"GIT_ASKPASS={shlex.quote(str(askpass_script))} SSH_ASKPASS={shlex.quote(str(askpass_script))} "
+                    f"GIT_TERMINAL_PROMPT=0; "
+                )
+            wrapper += 'exec /bin/bash "$@"'
+            cmd = ["/usr/bin/pkexec", "/bin/bash", "-c", wrapper, "bash", str(script)] + args
         else:
             cmd = ["/bin/bash", str(script)] + args
 

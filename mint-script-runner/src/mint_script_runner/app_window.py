@@ -530,11 +530,24 @@ class MainWindow(Gtk.Window):
             gh_box.pack_start(lbl_gh_warn, True, True, 0)
             content.pack_start(gh_box, False, False, 0)
 
+        if info["uses_github"] and not info["admin_suggested"]:
+            gh_info_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=8)
+            lbl_gh_info = Gtk.Label(xalign=0)
+            lbl_gh_info.set_markup(
+                "<span color='#7dcfff'>💡 <b>Tip:</b> Git sync scripts should be run as Standard User.</span>"
+            )
+            gh_info_box.pack_start(lbl_gh_info, True, True, 0)
+            content.pack_start(gh_info_box, False, False, 0)
+
         # Action Buttons
         btn_cancel = dialog.add_button("Cancel", Gtk.ResponseType.CANCEL)
         btn_user = dialog.add_button("👤 Run as Standard User", 100)
         btn_admin = dialog.add_button("🔒 Run as Administrator (Root)", 200)
-        btn_admin.get_style_context().add_class("suggested-action")
+
+        if info["admin_suggested"]:
+            btn_admin.get_style_context().add_class("suggested-action")
+        else:
+            btn_user.get_style_context().add_class("suggested-action")
 
         if info["uses_github"] and not self.settings.has_github_token():
             btn_settings = dialog.add_button("⚙️ Open Settings", 300)
