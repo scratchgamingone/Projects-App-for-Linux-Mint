@@ -479,10 +479,254 @@
       #content { padding: 0 !important; overflow: visible !important; }
       .content-section { box-shadow: none !important; border: none !important; padding: 0 !important; margin-bottom: 20px !important; }
     }
+
+    /* Main Unit Tabs Bar */
+    .unit-tabs-bar {
+      background: var(--bg-card);
+      border-bottom: 2px solid var(--border);
+      padding: 12px 28px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+      z-index: 9;
+    }
+
+    .tabs-wrapper {
+      display: flex;
+      align-items: stretch;
+      gap: 12px;
+      width: 100%;
+    }
+
+    .unit-tab-pill {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 10px 18px;
+      background: var(--bg-input);
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.2s ease;
+      color: var(--text-main);
+    }
+
+    .unit-tab-pill:hover {
+      border-color: var(--border-card);
+      transform: translateY(-1px);
+    }
+
+    .unit-tab-pill.active {
+      background: var(--bg-card);
+      border-color: var(--primary);
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.12);
+    }
+
+    [data-theme="dark"] .unit-tab-pill.active {
+      box-shadow: 0 4px 14px rgba(56, 189, 248, 0.15);
+      border-color: #38bdf8;
+    }
+
+    .pill-badge {
+      padding: 5px 12px;
+      border-radius: 8px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .badge-u1 {
+      background: #dbeafe;
+      color: #1d4ed8;
+      border: 1px solid #bfdbfe;
+    }
+
+    [data-theme="dark"] .badge-u1 {
+      background: rgba(37, 99, 235, 0.25);
+      color: #93c5fd;
+      border: 1px solid rgba(59, 130, 246, 0.35);
+    }
+
+    .badge-u2 {
+      background: #ede9fe;
+      color: #6d28d9;
+      border: 1px solid #ddd6fe;
+    }
+
+    [data-theme="dark"] .badge-u2 {
+      background: rgba(124, 58, 237, 0.25);
+      color: #c4b5fd;
+      border: 1px solid rgba(139, 92, 246, 0.35);
+    }
+
+    .badge-all {
+      background: #e2e8f0;
+      color: #334155;
+      border: 1px solid #cbd5e1;
+    }
+
+    [data-theme="dark"] .badge-all {
+      background: rgba(100, 116, 139, 0.25);
+      color: #cbd5e1;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+    }
+
+    .pill-content {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    .pill-title {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.25;
+    }
+
+    .unit-tab-pill.active .pill-title {
+      color: var(--primary);
+    }
+
+    [data-theme="dark"] .unit-tab-pill.active .pill-title {
+      color: #38bdf8;
+    }
+
+    .pill-subtitle {
+      font-size: 0.74rem;
+      color: var(--text-muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-top: 2px;
+    }
+
+    /* Sidebar Unit Switcher */
+    .sidebar-unit-selector {
+      margin: 14px 14px 6px 14px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 4px;
+      display: flex;
+      gap: 4px;
+    }
+
+    .side-tab-btn {
+      flex: 1;
+      background: transparent;
+      border: none;
+      color: var(--text-sidebar);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 7px 4px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .side-tab-btn:hover {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .side-tab-btn.active {
+      background: rgba(56, 189, 248, 0.2);
+      color: #38bdf8;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    }
+
+    /* Unit Hero Banners */
+    .unit-hero-banner {
+      background: linear-gradient(135deg, rgba(37,99,235,0.08) 0%, rgba(14,165,233,0.04) 100%);
+      border: 1px solid var(--border);
+      border-left: 6px solid var(--primary);
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-bottom: 32px;
+      box-shadow: var(--shadow);
+    }
+
+    .unit-hero-banner.u2-banner {
+      background: linear-gradient(135deg, rgba(124,58,237,0.08) 0%, rgba(56,189,248,0.04) 100%);
+      border-left-color: #7c3aed;
+    }
+
+    .unit-hero-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 6px;
+    }
+
+    .unit-hero-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+      line-height: 1.5;
+    }
+
+    .unit-hero-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .hero-chip {
+      font-size: 0.76rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      color: var(--text-main);
+    }
+
+    /* Search notice */
+    .search-notice {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--accent);
+      border-radius: 8px;
+      padding: 12px 18px;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      font-size: 0.9rem;
+      box-shadow: var(--shadow);
+    }
+
+    .btn-notice-switch {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .btn-notice-switch:hover {
+      opacity: 0.9;
+    }
+
   </style>
 </head>
-<body data-theme="light">
 
+<body data-theme="light">
   <!-- Sidebar -->
   <nav id="sidebar">
     <div class="sidebar-header">
@@ -496,25 +740,50 @@
       </div>
     </div>
 
-    <div class="nav-section">Core Review Units</div>
-    <ul class="nav-list">
-      <li class="nav-item"><a href="#section-1" class="active">📖 1. Definitions (U1 & U2)</a></li>
-      <li class="nav-item"><a href="#section-2">🔬 2. Scientists & Laws</a></li>
-      <li class="nav-item"><a href="#section-3">📐 3. Constants & Metric</a></li>
-      <li class="nav-item"><a href="#section-4">⚡ 4. Formulas & Trends</a></li>
-      <li class="nav-item"><a href="#section-5">🧪 5. Lewis, VSEPR & MOT</a></li>
-    </ul>
+    <!-- Quick Tab Selector in Sidebar -->
+    <div class="sidebar-unit-selector">
+      <button class="side-tab-btn active" id="side-tab-u1" onclick="switchUnitTab('unit1')">Unit 1</button>
+      <button class="side-tab-btn" id="side-tab-u2" onclick="switchUnitTab('unit2')">Unit 2</button>
+      <button class="side-tab-btn" id="side-tab-all" onclick="switchUnitTab('all')">All</button>
+    </div>
 
-    <div class="nav-section">Interactive Calculators</div>
-    <ul class="nav-list">
-      <li class="nav-item"><a href="#tool-1">🧮 1. Unit & Temp Converter</a></li>
-      <li class="nav-item"><a href="#tool-2">⚖️ 2. Stoichiometry & Yield</a></li>
-      <li class="nav-item"><a href="#tool-3">🧬 3. Empirical Formula</a></li>
-      <li class="nav-item"><a href="#tool-4">💡 4. Radiation Solver</a></li>
-      <li class="nav-item"><a href="#tool-5">⚛️ 5. Bohr Hydrogen Solver</a></li>
-      <li class="nav-item"><a href="#tool-6">🌊 6. de Broglie Solver</a></li>
-      <li class="nav-item"><a href="#tool-7">🧲 7. Formal Charge & MOT</a></li>
-    </ul>
+    <!-- Unit 1 Navigation Group -->
+    <div id="sidebar-nav-u1" class="sidebar-nav-group">
+      <div class="nav-section">Unit 1 Study Modules</div>
+      <ul class="nav-list">
+        <li class="nav-item"><a href="#u1-section-1" class="active">📖 1. U1 Definitions</a></li>
+        <li class="nav-item"><a href="#u1-section-2">🔬 2. Early Scientists &amp; Laws</a></li>
+        <li class="nav-item"><a href="#u1-section-3">📐 3. Metric, Conversions &amp; Constants</a></li>
+        <li class="nav-item"><a href="#u1-section-4">⚡ 4. Formulas &amp; Stoichiometry</a></li>
+      </ul>
+
+      <div class="nav-section">Unit 1 Calculators</div>
+      <ul class="nav-list">
+        <li class="nav-item"><a href="#tool-1">🧮 1. Unit &amp; Temp Converter</a></li>
+        <li class="nav-item"><a href="#tool-2">⚖️ 2. Stoichiometry &amp; Yield</a></li>
+        <li class="nav-item"><a href="#tool-3">🧬 3. Empirical Formula</a></li>
+      </ul>
+    </div>
+
+    <!-- Unit 2 Navigation Group -->
+    <div id="sidebar-nav-u2" class="sidebar-nav-group" style="display: none;">
+      <div class="nav-section">Unit 2 Study Modules</div>
+      <ul class="nav-list">
+        <li class="nav-item"><a href="#u2-section-1">📖 1. U2 Definitions</a></li>
+        <li class="nav-item"><a href="#u2-section-2">🔬 2. Quantum Scientists &amp; Rules</a></li>
+        <li class="nav-item"><a href="#u2-section-3">📐 3. Constants &amp; Electronegativity</a></li>
+        <li class="nav-item"><a href="#u2-section-4">⚡ 4. Formulas &amp; Periodic Trends</a></li>
+        <li class="nav-item"><a href="#u2-section-5">🧪 5. Lewis, VSEPR &amp; MOT</a></li>
+      </ul>
+
+      <div class="nav-section">Unit 2 Calculators</div>
+      <ul class="nav-list">
+        <li class="nav-item"><a href="#tool-4">💡 4. Radiation Solver</a></li>
+        <li class="nav-item"><a href="#tool-5">⚛️ 5. Bohr Hydrogen Solver</a></li>
+        <li class="nav-item"><a href="#tool-6">🌊 6. de Broglie Solver</a></li>
+        <li class="nav-item"><a href="#tool-7">🧲 7. Formal Charge &amp; MOT</a></li>
+      </ul>
+    </div>
   </nav>
 
   <!-- Main Container -->
@@ -526,7 +795,7 @@
           <circle cx="11" cy="11" r="8"></circle>
           <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
         </svg>
-        <input type="text" id="searchInput" placeholder="Instant Search Definitions, Formulas, Scientists..." oninput="handleSearch()">
+        <input type="text" id="searchInput" placeholder="Search Definitions, Formulas, Scientists..." oninput="handleSearch()">
       </div>
 
       <div class="top-actions">
@@ -535,15 +804,65 @@
       </div>
     </header>
 
+    <!-- Prominent Unit Tabs Bar -->
+    <div class="unit-tabs-bar">
+      <div class="tabs-wrapper" role="tablist">
+        <button class="unit-tab-pill active" id="tab-btn-u1" role="tab" aria-selected="true" onclick="switchUnitTab('unit1')">
+          <span class="pill-badge badge-u1">UNIT 1</span>
+          <div class="pill-content">
+            <span class="pill-title">Unit 1: Foundations &amp; Stoichiometry</span>
+            <span class="pill-subtitle">Matter · Atomic Theory · Metric &amp; Conversions · Reactions &amp; Yields · Tools 1–3</span>
+          </div>
+        </button>
+
+        <button class="unit-tab-pill" id="tab-btn-u2" role="tab" aria-selected="false" onclick="switchUnitTab('unit2')">
+          <span class="pill-badge badge-u2">UNIT 2</span>
+          <div class="pill-content">
+            <span class="pill-title">Unit 2: Quantum, Structure &amp; Bonding</span>
+            <span class="pill-subtitle">Electronic Structure · Periodic Trends · Lewis &amp; VSEPR · MOT · Tools 4–7</span>
+          </div>
+        </button>
+
+        <button class="unit-tab-pill" id="tab-btn-all" role="tab" aria-selected="false" onclick="switchUnitTab('all')">
+          <span class="pill-badge badge-all">ALL</span>
+          <div class="pill-content">
+            <span class="pill-title">Full Review (Both Units)</span>
+            <span class="pill-subtitle">Complete Combined Syllabus Reference</span>
+          </div>
+        </button>
+      </div>
+    </div>
+
     <!-- Main Content -->
     <main id="content">
+      <!-- Cross-Tab Search Notice Banner -->
+      <div id="search-tab-notice" class="search-notice" style="display: none;"></div>
 
-      <!-- Section 1 -->
-      <section id="section-1" class="content-section">
-        <p><a id="section-1"></a></p>
-<h2>1. Complete Dictionary of Definitions (Unit 1 &amp; Unit 2)</h2>
-<h3>Unit 1: Matter, Measurement, Atoms, Chemical Reactions &amp; Stoichiometry</h3>
-<ul>
+      <!-- UNIT 1 CONTAINER -->
+      <div id="unit1-container" class="unit-pane">
+        <!-- Hero Banner -->
+        <div class="unit-hero-banner">
+          <div class="unit-hero-title">
+            <span>📘</span> Unit 1: Matter, Measurement, Atomic Foundations &amp; Stoichiometry
+          </div>
+          <p class="unit-hero-desc">
+            Complete study reference for General Chemistry I Unit 1. Master classification of matter, significant figures, atomic theory, isotopic mass averages, mole conversions, chemical reaction equations, limiting reactants, and percentage yields.
+          </p>
+          <div class="unit-hero-chips">
+            <span class="hero-chip">🔬 Matter &amp; Pure Substances</span>
+            <span class="hero-chip">📏 Sig Figs &amp; Metric Prefixes</span>
+            <span class="hero-chip">⚛️ Atomic Structure &amp; Isotopes</span>
+            <span class="hero-chip">⚖️ Mole Conversions &amp; Stoichiometry</span>
+            <span class="hero-chip">🧬 Empirical &amp; Molecular Formulas</span>
+            <span class="hero-chip">🎯 Limiting Reactant &amp; Yields</span>
+            <span class="hero-chip">🧮 Tools 1, 2 &amp; 3</span>
+          </div>
+        </div>
+
+        <!-- U1 Section 1: Definitions -->
+        <section id="u1-section-1" class="content-section">
+          <h2>1. Dictionary of Unit 1 Definitions</h2>
+          <ul>
 <li><strong>Chemistry:</strong> The study of matter and the physical and chemical changes that it undergoes.</li>
 <li><strong>Matter:</strong> Anything that has mass and occupies space (volume).</li>
 <li><strong>States of Matter:</strong></li>
@@ -603,72 +922,15 @@
 <li><strong>Actual Yield:</strong> The actual quantity of product isolated and weighed in a laboratory experiment.</li>
 <li><strong>Percent Yield:</strong> The ratio of actual yield to theoretical yield expressed as a percentage ($[\text{Actual} / \text{Theoretical}] \times 100\%$).</li>
 </ul>
-<hr />
-<h3>Unit 2: Electronic Structure, Periodic Trends, Bonding, Geometry &amp; MOT</h3>
-<ul>
-<li><strong>Electromagnetic Radiation:</strong> Form of radiant energy propagating through a vacuum at the speed of light ($2.9979 \times 10^8\text{ m/s}$) exhibiting wave-like periodicity.</li>
-<li><strong>Wavelength ($\lambda$):</strong> The linear distance between two consecutive crests or troughs of an electromagnetic wave (m or nm).</li>
-<li><strong>Frequency ($\nu$):</strong> The number of complete wave cycles that pass a given point each second ($s^{-1}$ or Hz).</li>
-<li><strong>Amplitude:</strong> The vertical height from node to crest; dictates radiant intensity/brightness.</li>
-<li><strong>Quantum:</strong> The minimum discrete packet of energy that can be gained or lost by an atom.</li>
-<li><strong>Photon:</strong> A quantum of electromagnetic energy behaving as a particle with energy proportional to frequency ($E = h\nu$).</li>
-<li><strong>Photoelectric Effect:</strong> The emission of electrons from a clean metal surface when illuminated by light possessing sufficient threshold frequency.</li>
-<li><strong>Continuous Spectrum:</strong> A spectrum displaying an unbroken continuum of all wavelengths (e.g., rainbow, white light from sun/lamp).</li>
-<li><strong>Line Spectrum:</strong> A spectrum displaying sharp, discrete, isolated emission wavelengths unique to a specific gaseous element.</li>
-<li><strong>Ground State:</strong> The lowest possible energy electronic arrangement of an atom ($n=1$ in Bohr hydrogen).</li>
-<li><strong>Excited State:</strong> Any electronic state possessing higher energy than the ground state ($n &gt; 1$).</li>
-<li><strong>Atomic Orbital:</strong> A three-dimensional spatial probability distribution (wavefunction squared, $\psi^2$) where an electron has up to a 90% probability of being found.</li>
-<li><strong>Node:</strong> A region or plane in an orbital where the probability of finding an electron is identically zero ($\psi^2 = 0$).</li>
-<li><strong>Quantum Numbers:</strong> Set of four values ($n, l, m_l, m_s$) completely describing the energy, shape, orientation, and spin of an electron.</li>
-<li><strong>Degenerate Orbitals:</strong> Two or more orbitals possessing identical energy levels (e.g., the three $2p$ orbitals in an isolated atom).</li>
-<li><strong>Core Electrons:</strong> Inner-shell electrons occupying completely filled noble gas electron shells underneath the valence shell.</li>
-<li><strong>Valence Electrons:</strong> Electrons occupying the outermost principal quantum shell; dictate chemical bonding and periodic behavior.</li>
-<li><strong>Bonding Atomic Radius:</strong> One-half of the distance between the nuclei of two identical atoms covalently bonded together ($r = \frac{1}{2}d$).</li>
-<li><strong>Effective Nuclear Charge ($Z_{\text{eff}}$):</strong> The net inward positive electrostatic attraction experienced by a valence electron from the nucleus ($Z_{\text{eff}} = Z - S$).</li>
-<li><strong>Electron Shielding (Screening):</strong> The repulsive screening effect exerted by inner core electrons reducing the full nuclear charge felt by outer valence electrons.</li>
-<li><strong>First Ionization Energy ($I_1$):</strong> Minimum energy required to remove the highest-energy valence electron from an isolated gaseous ground-state atom (always endothermic).</li>
-<li><strong>Successive Ionization Energies ($I_2, I_3, \dots$):</strong> Energy required to remove subsequent electrons from positive ions ($I_1 &lt; I_2 &lt; I_3$).</li>
-<li><strong>Core Electron Quantum Leap:</strong> The massive multi-fold surge in ionization energy observed when an element runs out of valence electrons and core electrons are removed.</li>
-<li><strong>Electron Affinity ($EA$):</strong> The energy change associated with adding an electron to an isolated gaseous atom to form an anion.</li>
-<li><strong>Electronegativity ($EN$):</strong> The relative empirical ability of an atom in a molecule to attract shared bonding electrons toward itself.</li>
-<li><strong>Metallic Character:</strong> Physical and chemical tendencies associated with metals (luster, malleability, low ionization energy, cation formation, basic oxides).</li>
-<li><strong>Isoelectronic Series:</strong> A family of atoms and ions possessing the exact same total number of electrons and identical ground-state electron configurations.</li>
-<li><strong>Ionic Bond:</strong> Electrostatic attraction holding oppositely charged cations and anions together following electron transfer.</li>
-<li><strong>Covalent Bond:</strong> Chemical bond formed through mutual sharing of one or more electron pairs between two nonmetal nuclei.</li>
-<li><strong>Metallic Bond:</strong> Delocalized sharing of valence electrons within a mobile electron sea across a metal lattice.</li>
-<li><strong>Bond Length:</strong> The equilibrium distance between the nuclei of two bonded atoms where electrostatic attraction balances repulsion.</li>
-<li><strong>Bond Enthalpy (Dissociation Energy):</strong> The energy required to break one mole of a specific covalent bond in the gas phase (always positive/endothermic).</li>
-<li><strong>Octet Rule:</strong> Tendency of main-group atoms to gain, lose, or share electrons until surrounded by 8 valence electrons ($ns^2 np^6$).</li>
-<li><strong>Bonding Pair:</strong> A pair of shared valence electrons participating directly in a covalent bond.</li>
-<li><strong>Lone Pair (Nonbonding Pair):</strong> An unshared pair of valence electrons localized on a single atom.</li>
-<li><strong>Formal Charge:</strong> The theoretical charge assigned to an individual atom in a Lewis structure assuming equal sharing of shared bonds.</li>
-<li><strong>Resonance Structures:</strong> Two or more valid Lewis dot structures representing the same molecule with identical atom connectivity but differing electron positions.</li>
-<li><strong>Resonance Hybrid:</strong> The true, blended molecular electronic structure representing the weighted average of all contributing resonance forms.</li>
-<li><strong>Electron Domain:</strong> A region of high electron density around a central atom (every single bond, double bond, triple bond, or lone pair = 1 domain).</li>
-<li><strong>Electron Pair Arrangement (Electron-Domain Geometry):</strong> The 3D spatial distribution of all electron domains around the central atom.</li>
-<li><strong>Molecular Geometry (Shape):</strong> The actual 3D arrangement of only the bonded atoms around the central atom.</li>
-<li><strong>Valence Shell Electron Pair Repulsion (VSEPR) Theory:</strong> Model postulating that electron domains arrange around a central atom to minimize mutual electrostatic repulsions.</li>
-<li><strong>Hybridization:</strong> The quantum mathematical mixing of atomic orbitals on a central atom to produce equivalent hybrid orbitals matching observed bond angles.</li>
-<li><strong>Sigma ($\sigma$) Bond:</strong> A covalent bond formed by direct head-on overlap of orbitals along the internuclear axis.</li>
-<li><strong>Pi ($\pi$) Bond:</strong> A covalent bond formed by parallel sideways overlap of unhybridized $p$-orbitals above and below the internuclear axis.</li>
-<li><strong>Dipole Moment ($\mu$):</strong> Quantitative measure of the separation of positive and negative charges in a polar molecule ($\mu = Q \times r$).</li>
-<li><strong>Molecular Polarity:</strong> Property of an asymmetrical molecule where individual bond dipoles fail to cancel, yielding a net molecular dipole moment.</li>
-<li><strong>Molecular Orbital Theory (MOT):</strong> Model describing electrons in molecules by wavefunctions delocalized across the entire molecule rather than individual atoms.</li>
-<li><strong>Bonding Molecular Orbital:</strong> Lower-energy molecular orbital formed by constructive wave interference that concentrates electron density between nuclei.</li>
-<li><strong>Antibonding Molecular Orbital ($\sigma^<em>, \pi^</em>$):</strong> Higher-energy molecular orbital formed by destructive wave interference that introduces a node between nuclei.</li>
-<li><strong>Bond Order (MO):</strong> Metric measuring bond stability and strength equal to one-half the difference between bonding and antibonding electrons.</li>
-<li><strong>Diamagnetism:</strong> Property of substances with all electrons paired; weakly repelled by external magnetic fields.</li>
-<li><strong>Paramagnetism:</strong> Property of substances with one or more unpaired electrons; attracted into external magnetic fields.</li>
-</ul>
-<hr />
-      </section>
 
-      <!-- Section 2 -->
-      <section id="section-2" class="content-section">
-        <p><a id="section-2"></a></p>
-<h2>2. Historical Scientists, Accomplishments, Laws &amp; Core Principles</h2>
-<h3>Complete Historical Registry of Chemistry</h3>
-<table>
+        </section>
+
+        <!-- U1 Section 2: Scientists & Laws -->
+        <section id="u1-section-2" class="content-section">
+          <h2>2. Unit 1 Historical Scientists, Discoveries &amp; Atomic Laws</h2>
+          <h3>Early Atomic Theory &amp; Foundations</h3>
+          <table>
+            <table>
 <thead>
 <tr>
 <th style="text-align: left;">Scientist &amp; Era</th>
@@ -678,7 +940,9 @@
 </tr>
 </thead>
 <tbody>
-<tr>
+
+            <tbody>
+              <tr>
 <td style="text-align: left;"><strong>Antoine Lavoisier</strong> (1743–1794)</td>
 <td style="text-align: left;">Quantitative closed-vessel combustion</td>
 <td style="text-align: left;">Established the <strong>Law of Conservation of Mass</strong></td>
@@ -720,120 +984,37 @@
 <td style="text-align: left;">Discovered the <strong>Neutron</strong></td>
 <td style="text-align: left;">Identified neutral nucleons with mass approximately equal to protons, resolving the nuclear mass discrepancy.</td>
 </tr>
-<tr>
-<td style="text-align: left;"><strong>Max Planck</strong> (1900)</td>
-<td style="text-align: left;">Blackbody radiation emissions</td>
-<td style="text-align: left;">Proposed <strong>Quantization of Energy</strong>; discovered <strong>Planck's Constant</strong> ($h = 6.626 \times 10^{-34}\text{ J}\cdot\text{s}$)</td>
-<td style="text-align: left;">Energy is emitted/absorbed only in discrete whole-number multiples of quanta ($E = nh\nu$).</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Albert Einstein</strong> (1905)</td>
-<td style="text-align: left;"><strong>Photoelectric Effect</strong> analysis</td>
-<td style="text-align: left;">Introduced the <strong>Photon</strong>; established wave-particle duality of light ($E = h\nu = hc/\lambda$)</td>
-<td style="text-align: left;">Light behaves as a localized stream of energy packets. One photon dislodges one electron if frequency surpasses threshold.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Niels Bohr</strong> (1913)</td>
-<td style="text-align: left;">Hydrogen atomic line spectrum</td>
-<td style="text-align: left;">Proposed the <strong>Bohr Model of the Atom</strong>; quantized angular momentum orbits</td>
-<td style="text-align: left;">Electrons occupy stationary circular orbits with discrete energy levels ($E_n = -R_H/n^2$). Explains hydrogen line spectra, but fails for $Z \ge 2$.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Louis de Broglie</strong> (1924)</td>
-<td style="text-align: left;">Dual nature of matter synthesis</td>
-<td style="text-align: left;">Formulated the <strong>de Broglie Matter Wavelength</strong> ($\lambda = h/mv$)</td>
-<td style="text-align: left;">All moving matter with momentum exhibits wave properties. Intermediate-mass particles like electrons display measurable wave diffraction.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Werner Heisenberg</strong> (1927)</td>
-<td style="text-align: left;">Quantum mechanics matrix formulations</td>
-<td style="text-align: left;">Formulated the <strong>Heisenberg Uncertainty Principle</strong></td>
-<td style="text-align: left;">Fundamentally impossible to simultaneously measure both the position and momentum of a subatomic particle. Disproved fixed 2D planetary Bohr orbits.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Erwin Schrödinger</strong> (1926)</td>
-<td style="text-align: left;">Wave mechanics differential equation</td>
-<td style="text-align: left;">Formulated the <strong>Schrödinger Wave Equation</strong> ($H\psi = E\psi$); introduced <strong>Atomic Orbitals</strong></td>
-<td style="text-align: left;">Wavefunction $\psi^2$ maps 3D electron probability density clouds rather than deterministic paths.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Wolfgang Pauli</strong> (1925)</td>
-<td style="text-align: left;">Atomic spectroscopic analysis</td>
-<td style="text-align: left;">Established the <strong>Pauli Exclusion Principle</strong></td>
-<td style="text-align: left;">No two electrons in an atom can have the identical set of 4 quantum numbers ($n, l, m_l, m_s$). An orbital holds at most 2 electrons with opposite spins.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Friedrich Hund</strong> (1927)</td>
-<td style="text-align: left;">Spectral term analysis</td>
-<td style="text-align: left;">Established <strong>Hund's Rule of Maximum Multiplicity</strong></td>
-<td style="text-align: left;">In degenerate orbitals ($p, d, f$), electrons occupy orbitals singly with parallel spins before pairing to minimize repulsions.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Gilbert N. Lewis</strong> (1916)</td>
-<td style="text-align: left;">Chemical bonding electronic theory</td>
-<td style="text-align: left;">Introduced <strong>Lewis Dot Symbols</strong>, covalent electron pair sharing, and the <strong>Octet Rule</strong></td>
-<td style="text-align: left;">Valence electrons govern bonding; atoms gain, lose, or share electrons to reach a stable noble gas configuration ($ns^2 np^6$).</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h3>Guiding Principles &amp; Electronic Ground Rules</h3>
-<ol>
-<li><strong>Aufbau Principle:</strong> Orbitals fill strictly in order of increasing energy level: $1s &lt; 2s &lt; 2p &lt; 3s &lt; 3p &lt; 4s &lt; 3d &lt; 4p &lt; 5s &lt; 4d &lt; 5p &lt; 6s &lt; 4f \dots$</li>
-<li><strong>Pauli Exclusion Principle:</strong> Each atomic orbital holds a maximum of two electrons, and they must have opposite spins ($\uparrow\downarrow$).</li>
-<li><strong>Hund's Rule:</strong> In orbitals of equal energy (degenerate subshells), electrons must occupy each orbital singly with parallel spins before pairing.</li>
-<li><strong>Stability of Half-Filled / Filled $d$-Subshells:</strong> When an atom is one electron away from a half-filled ($d^5$) or completely filled ($d^{10}$) subshell, an $s$-electron promotes into the $d$-subshell:</li>
-<li><strong>Chromium (Cr, $Z=24$):</strong> $[\text{Ar}]\,4s^1 3d^5$ (not $4s^2 3d^4$)</li>
-<li><strong>Copper (Cu, $Z=29$):</strong> $[\text{Ar}]\,4s^1 3d^{10}$ (not $4s^2 3d^9$)</li>
-<li><strong>Molybdenum (Mo, $Z=42$):</strong> $[\text{Kr}]\,5s^1 4d^5$</li>
-<li><strong>Silver (Ag, $Z=47$):</strong> $[\text{Kr}]\,5s^1 4d^{10}$</li>
-<li><strong>Cation Removal Priority Rule:</strong> Transition and post-transition metals lose electrons from the outermost valence shell (highest $n$, the $s$ and $p$ electrons) <strong>first</strong> before losing any $(n-1)d$ electrons:</li>
-<li>$\text{Sn} \to \mathbf{Sn^{2+}: [\text{Kr}]\,5s^2 4d^{10}}$ (loses $5p^2$)</li>
-<li>$\text{Ni} \to \mathbf{Ni^{2+}: [\text{Ar}]\,3d^8}$ (loses $4s^2$)</li>
-<li>$\text{Fe} \to \mathbf{Fe^{2+}: [\text{Ar}]\,3d^6}$ and $\mathbf{Fe^{3+}: [\text{Ar}]\,3d^5}$ (loses $4s^2$ then one $3d$)</li>
-</ol>
-<hr />
-      </section>
 
-      <!-- Section 3 -->
-      <section id="section-3" class="content-section">
-        <p><a id="section-3"></a></p>
-<h2>3. Master Physical Constants, Conversion Factors &amp; Metric Tables</h2>
-<h3>Table 1: Fundamental Physical Constants to Memorize</h3>
-<table>
+            </tbody>
+          </table>
+          <hr />
+          <h3>Dalton's Atomic Theory (4 Core Postulates)</h3>
+          <ol>
+            <li><strong>Postulate 1:</strong> Each element is composed of extremely small, indivisible particles called atoms. <em>(Modern revision: Divisible into subatomic protons, neutrons, and electrons via nuclear reactions).</em></li>
+            <li><strong>Postulate 2:</strong> All atoms of a given element are identical in mass and properties; atoms of different elements are fundamentally different. <em>(Modern revision: Isotopes exist with differing neutron counts and atomic masses).</em></li>
+            <li><strong>Postulate 3:</strong> Atoms of an element are not changed into atoms of a different element by chemical reactions; chemical reactions only separate, combine, or rearrange atoms.</li>
+            <li><strong>Postulate 4:</strong> Compounds are formed when atoms of more than one element combine in simple, whole-number ratios.</li>
+          </ol>
+        </section>
+
+        <!-- U1 Section 3: Metric & Constants -->
+        <section id="u1-section-3" class="content-section">
+          <h2>3. Unit 1 Physical Constants, Metric Prefixes &amp; Conversions</h2>
+          <h3>Table 1: Fundamental Unit 1 Physical Constants</h3>
+          <table>
+            <table>
 <thead>
 <tr>
 <th style="text-align: left;">Constant Name</th>
-<th style="text-align: center;">Symbol</th>
-<th style="text-align: center;">Exact / Accepted Value</th>
-<th style="text-align: center;">Units</th>
-<th style="text-align: left;">Relevance</th>
+<th style="text-align: left;">Symbol</th>
+<th style="text-align: left;">Exact / Accepted Value</th>
+<th style="text-align: left;">Units &amp; Relevance</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td style="text-align: left;"><strong>Speed of Light in Vacuum</strong></td>
-<td style="text-align: center;">$c$</td>
-<td style="text-align: center;">$2.9979 \times 10^8$ (or $3.00 \times 10^8$)</td>
-<td style="text-align: center;">$\text{m/s}$</td>
-<td style="text-align: left;">Electromagnetic radiation ($c = \lambda\nu$)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Planck's Constant</strong></td>
-<td style="text-align: center;">$h$</td>
-<td style="text-align: center;">$6.626 \times 10^{-34}$</td>
-<td style="text-align: center;">$\text{J}\cdot\text{s}$</td>
-<td style="text-align: left;">Quantum energy &amp; photons ($E = h\nu$)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Rydberg Energy Factor</strong></td>
-<td style="text-align: center;">$R_H$ or $hcR_H$</td>
-<td style="text-align: center;">$2.178 \times 10^{-18}$ (or $2.18 \times 10^{-18}$)</td>
-<td style="text-align: center;">$\text{J}$</td>
-<td style="text-align: left;">Bohr hydrogen energy levels &amp; transitions</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Avogadro's Number</strong></td>
+
+            <tbody>
+              <td style="text-align: left;"><strong>Avogadro's Number</strong></td>
 <td style="text-align: center;">$N_A$</td>
 <td style="text-align: center;">$6.022 \times 10^{23}$</td>
 <td style="text-align: center;">$\text{particles/mol}$</td>
@@ -875,9 +1056,11 @@
 <td style="text-align: left;">Benchmark density ($D &gt; 1$ sinks in water)</td>
 </tr>
 </tbody>
-</table>
-<hr />
-<h3>Table 2: SI Metric Prefix Multipliers (Required to Memorize)</h3>
+
+            </tbody>
+          </table>
+          <hr />
+          <h3>Table 2: SI Metric Prefix Multipliers (Required to Memorize)</h3>
 <table>
 <thead>
 <tr>
@@ -954,8 +1137,9 @@
 </tr>
 </tbody>
 </table>
-<hr />
-<h3>Table 3: English-to-Metric &amp; Standard Laboratory Conversions</h3>
+
+          <hr />
+          <h3>Table 3: English-to-Metric &amp; Standard Laboratory Conversions</h3>
 <table>
 <thead>
 <tr>
@@ -1010,8 +1194,9 @@
 </tr>
 </tbody>
 </table>
-<hr />
-<h3>Table 4: Temperature Conversion Equations (Memorize!)</h3>
+
+          <hr />
+          <h3>Table 4: Temperature Conversion Equations (Memorize!)</h3>
 <ol>
 <li><strong>Fahrenheit from Celsius:</strong>
    $$^\circ\text{F} = (1.8)^\circ\text{C} + 32$$</li>
@@ -1020,23 +1205,19 @@
 <li><strong>Kelvin from Celsius:</strong>
    $$\text{K} = ^\circ\text{C} + 273.15 \quad (\text{or } + 273)$$</li>
 </ol>
-<hr />
-<h3>Table 5: Memorized Pauling Electronegativities &amp; 7 Diatomic Molecules</h3>
-<ul>
-<li><strong>Pauling Electronegativities:</strong>
-  $$\mathbf{F = 4.0} \quad&gt;\quad \mathbf{O = 3.5} \quad&gt;\quad \mathbf{N = 3.0} \;=\; \mathbf{Cl = 3.0} \quad&gt;\quad \mathbf{C = 2.5} \quad&gt;\quad \mathbf{H = 2.1}$$</li>
-<li><strong>The 7 Diatomic Molecules:</strong>
-  $$\mathbf{H_2, N_2, O_2, F_2, Cl_2, Br_2, I_2}$$
-  <em>(Mnemonic: 'Have No Fear Of Ice Cold Beer' or the '7' shape on the periodic table)</em></li>
-</ul>
-<hr />
-      </section>
 
-      <!-- Section 4 -->
-      <section id="section-4" class="content-section">
-        <p><a id="section-4"></a></p>
-<h2>4. Master Formulas, Variables, Calculations &amp; Periodic Trends</h2>
-<h3>1. Unit 1 Formulas &amp; Equations</h3>
+          <hr />
+          <h3>The 7 Diatomic Molecules (Essential Memorization)</h3>
+          <p style="font-size:1.1rem; font-weight:700; color:var(--primary); margin:10px 0;">
+            H₂, N₂, O₂, F₂, Cl₂, Br₂, I₂
+          </p>
+          <p><em>Mnemonic: <strong>"Have No Fear Of Ice Cold Beer"</strong> or remember the shape of a "7" starting at Nitrogen (element 7) on the periodic table plus Hydrogen.</em></p>
+        </section>
+
+        <!-- U1 Section 4: Formulas & Stoichiometry -->
+        <section id="u1-section-4" class="content-section">
+          <h2>4. Unit 1 Master Formulas, Calculations &amp; Stoichiometry Roadmaps</h2>
+          <h3>1. Unit 1 Formulas &amp; Equations</h3>
 <ul>
 <li><strong>Density Formula:</strong>
   $$D = \frac{M}{V} \implies M = D \times V \implies V = \frac{M}{D}$$</li>
@@ -1049,8 +1230,623 @@
 <li><strong>Percent Yield:</strong>
   $$\text{Percent Yield} = \frac{\text{Actual Yield}}{\text{Theoretical Yield}} \times 100\%$$</li>
 </ul>
+
+          <hr />
+          <h3>The Master Stoichiometry Mole Bridge Roadmap</h3>
+          <div style="background:var(--bg-input); border:1px solid var(--border-card); border-radius:10px; padding:18px; margin:16px 0; font-family:monospace; line-height:1.7;">
+            <strong>Step 1:</strong> Mass Reactant A (g) &nbsp; ──[ ÷ Molar Mass A ]──&gt; &nbsp; <strong>Moles of A</strong><br>
+            <strong>Step 2:</strong> Moles of A &nbsp; ──[ × (Mole Ratio B / A from Balanced Eq) ]──&gt; &nbsp; <strong>Moles of B</strong><br>
+            <strong>Step 3:</strong> Moles of B &nbsp; ──[ × Molar Mass B ]──&gt; &nbsp; <strong>Theoretical Mass of B (g)</strong><br>
+            <br>
+            <strong>Limiting Reactant Test:</strong><br>
+            Calculate moles of product yield for each reactant individually. The reactant yielding the <em>lowest</em> moles of product is strictly the <strong>Limiting Reactant (LR)</strong> and dictates theoretical yield.
+          </div>
+        </section>
+
+        <!-- U1 Calculators Section -->
+        <section id="u1-calculators" class="content-section">
+          <h1>Unit 1 Interactive Calculators</h1>
+          <p>Instant offline calculation engines for Unit 1 unit conversions, stoichiometry, limiting reactants, and empirical/molecular formula determinations.</p>
+
+                  <div id="tool-1" class="tool-card">
+          <div class="tool-title">🧮 Tool 1: Unit & Temperature Converter</div>
+          <div class="tool-desc">Convert metric prefixes, English-to-Metric dimensions, and Fahrenheit/Celsius/Kelvin temperatures.</div>
+
+          <h4 style="margin-bottom:8px;">A. Metric Prefix Converter</h4>
+          <div class="calc-grid">
+            <div class="form-group">
+              <label>Value</label>
+              <input type="number" id="t1_val" value="1" step="any" oninput="calcTool1Prefix()">
+            </div>
+            <div class="form-group">
+              <label>From Prefix</label>
+              <select id="t1_from" onchange="calcTool1Prefix()">
+                <option value="G">G (Giga, 10⁹)</option>
+                <option value="M">M (Mega, 10⁶)</option>
+                <option value="k" selected>k (kilo, 10³)</option>
+                <option value="d">d (deci, 10⁻¹)</option>
+                <option value="c">c (centi, 10⁻²)</option>
+                <option value="m">m (milli, 10⁻³)</option>
+                <option value="u">µ (micro, 10⁻⁶)</option>
+                <option value="n">n (nano, 10⁻⁹)</option>
+                <option value="p">p (pico, 10⁻¹²)</option>
+                <option value="">(Base unit, 10⁰)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>To Prefix</label>
+              <select id="t1_to" onchange="calcTool1Prefix()">
+                <option value="G">G (Giga, 10⁹)</option>
+                <option value="M">M (Mega, 10⁶)</option>
+                <option value="k">k (kilo, 10³)</option>
+                <option value="d">d (deci, 10⁻¹)</option>
+                <option value="c">c (centi, 10⁻²)</option>
+                <option value="m" selected>m (milli, 10⁻³)</option>
+                <option value="u">µ (micro, 10⁻⁶)</option>
+                <option value="n">n (nano, 10⁻⁹)</option>
+                <option value="p">p (pico, 10⁻¹²)</option>
+                <option value="">(Base unit, 10⁰)</option>
+              </select>
+            </div>
+          </div>
+          <div style="font-size:0.95rem; font-weight:700; margin-bottom:16px;">
+            Result: <span id="t1_res" style="color:var(--primary);">1.0000e+06</span>
+          </div>
+
+          <h4 style="margin-bottom:8px;">B. English-to-Metric & Pressure Converter</h4>
+          <div class="calc-grid">
+            <div class="form-group">
+              <label>Value</label>
+              <input type="number" id="t1_em_val" value="5.00" step="any" oninput="calcTool1EM()">
+            </div>
+            <div class="form-group">
+              <label>Conversion Mode</label>
+              <select id="t1_em_mode" onchange="calcTool1EM()">
+                <option value="in_cm">Inches to Centimeters (1 in = 2.54 cm)</option>
+                <option value="cm_in">Centimeters to Inches</option>
+                <option value="lb_g">Pounds to Grams (1 lb = 453.592 g)</option>
+                <option value="g_lb">Grams to Pounds</option>
+                <option value="gal_L">Gallons to Liters (1 gal = 3.78541 L)</option>
+                <option value="L_gal">Liters to Gallons</option>
+                <option value="atm_mmHg">atm to mmHg / torr (1 atm = 760 mmHg)</option>
+                <option value="mmHg_atm">mmHg / torr to atm</option>
+                <option value="atm_kPa">atm to kPa (1 atm = 101.325 kPa)</option>
+              </select>
+            </div>
+          </div>
+          <div style="font-size:0.95rem; font-weight:700; margin-bottom:16px;">
+            Result: <span id="t1_em_res" style="color:var(--primary);">12.7 cm</span>
+          </div>
+
+          <h4 style="margin-bottom:8px;">C. Temperature Converter</h4>
+          <div class="calc-grid">
+            <div class="form-group">
+              <label>Temperature Value</label>
+              <input type="number" id="t1_temp_val" value="72" step="any" oninput="calcTool1Temp()">
+            </div>
+            <div class="form-group">
+              <label>From Scale</label>
+              <select id="t1_temp_from" onchange="calcTool1Temp()">
+                <option value="F" selected>Fahrenheit (°F)</option>
+                <option value="C">Celsius (°C)</option>
+                <option value="K">Kelvin (K)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>To Scale</label>
+              <select id="t1_temp_to" onchange="calcTool1Temp()">
+                <option value="F">Fahrenheit (°F)</option>
+                <option value="C">Celsius (°C)</option>
+                <option value="K" selected>Kelvin (K)</option>
+              </select>
+            </div>
+          </div>
+          <div style="font-size:0.95rem; font-weight:700;">
+            Result: <span id="t1_temp_res" style="color:var(--primary);">295.37 K</span>
+          </div>
+
+          <details class="code-details">
+            <summary>View Tool 1 Python Code</summary>
+            <pre><code># Tool 1: Comprehensive Unit & Temperature Converter
+# Covers Metric Prefixes, English-Metric Equivalence, and Temperature Scales
+
+METRIC_PREFIXES = {
+    "G": ("giga", 1e9), "M": ("mega", 1e6), "k": ("kilo", 1e3),
+    "d": ("deci", 1e-1), "c": ("centi", 1e-2), "m": ("milli", 1e-3),
+    "u": ("micro", 1e-6), "n": ("nano", 1e-9), "p": ("pico", 1e-12), "": ("base", 1.0)
+}
+
+def convert_metric_prefix(value, from_pfx, to_pfx):
+    """Converts a numeric value between metric prefixes (e.g. 'k' to 'm')."""
+    base_val = value * METRIC_PREFIXES[from_pfx][1]
+    return f"{base_val / METRIC_PREFIXES[to_pfx][1]:.4e}"
+
+def convert_temp(val, from_scale, to_scale):
+    """Converts temperature between Fahrenheit ('F'), Celsius ('C'), and Kelvin ('K')."""
+    from_s, to_s = from_scale.upper(), to_scale.upper()
+    c = (val - 32) / 1.8 if from_s == "F" else (val if from_s == "C" else val - 273.15)
+    if to_s == "C": return round(c, 2)
+    elif to_s == "F": return round(1.8 * c + 32, 2)
+    elif to_s == "K": return round(c + 273.15, 2)
+
+def convert_english_metric(val, unit_from, unit_to):
+    """Common CHEM 151 conversion factors: in<->cm, lb<->g, gal<->L, atm<->mmHg/torr."""
+    factors = {
+        ("in", "cm"): 2.54, ("cm", "in"): 1 / 2.54,
+        ("lb", "g"): 453.592, ("g", "lb"): 1 / 453.592,
+        ("gal", "l"): 3.78541, ("l", "gal"): 1 / 3.78541,
+        ("atm", "mmhg"): 760.0, ("mmhg", "atm"): 1 / 760.0,
+        ("atm", "torr"): 760.0, ("torr", "atm"): 1 / 760.0,
+        ("atm", "kpa"): 101.325, ("kpa", "atm"): 1 / 101.325
+    }
+    key = (unit_from.lower(), unit_to.lower())
+    if key in factors:
+        return round(val * factors[key], 4)
+    raise ValueError(f"Conversion from {unit_from} to {unit_to} not supported.")
+
+print("--- Tool 1: Unit & Temperature Conversions ---")
+print("1 kg to mg:       ", convert_metric_prefix(1, "k", "m"), "mg")
+print("1 ds to ps:       ", convert_metric_prefix(1, "d", "p"), "ps")
+print("72 °F to Celsius: ", convert_temp(72, "F", "C"), "°C")
+print("72 °F to Kelvin:  ", convert_temp(72, "F", "K"), "K")
+print("5.00 in to cm:    ", convert_english_metric(5.00, "in", "cm"), "cm")
+print("1.25 atm to mmHg: ", convert_english_metric(1.25, "atm", "mmHg"), "mmHg")
+</code></pre>
+          </details>
+        </div>
+
+
+
+                  <!-- Tool 2 -->
+        <div id="tool-2" class="tool-card">
+          <div class="tool-title">⚖️ Tool 2: Stoichiometry, Limiting Reactant & Percent Yield Solver</div>
+          <div class="tool-desc">Solves two-reactant stoichiometry reactions, determines the limiting reactant, theoretical yield, excess remaining, and percent yield.</div>
+
+          <div style="margin-bottom:12px;">
+            <button class="btn-preset" onclick="loadTool2Preset('nh3')">Preset: Review Sheet N₂ + 3H₂ → 2NH₃</button>
+            <button class="btn-preset" onclick="loadTool2Preset('water')">Preset: 2H₂ + O₂ → 2H₂O</button>
+          </div>
+
+          <h4 style="margin:8px 0;">Reactant 1</h4>
+          <div class="calc-grid">
+            <div class="form-group"><label>Formula/Name</label><input type="text" id="t2_r1_name" value="N2"></div>
+            <div class="form-group"><label>Mass (g)</label><input type="number" id="t2_r1_g" value="1.00" step="any"></div>
+            <div class="form-group"><label>Molar Mass (g/mol)</label><input type="number" id="t2_r1_mm" value="28.02" step="any"></div>
+            <div class="form-group"><label>Balanced Coeff</label><input type="number" id="t2_r1_coeff" value="1" step="any"></div>
+          </div>
+
+          <h4 style="margin:8px 0;">Reactant 2</h4>
+          <div class="calc-grid">
+            <div class="form-group"><label>Formula/Name</label><input type="text" id="t2_r2_name" value="H2"></div>
+            <div class="form-group"><label>Mass (g)</label><input type="number" id="t2_r2_g" value="3.00" step="any"></div>
+            <div class="form-group"><label>Molar Mass (g/mol)</label><input type="number" id="t2_r2_mm" value="2.016" step="any"></div>
+            <div class="form-group"><label>Balanced Coeff</label><input type="number" id="t2_r2_coeff" value="3" step="any"></div>
+          </div>
+
+          <h4 style="margin:8px 0;">Target Product & Actual Yield</h4>
+          <div class="calc-grid">
+            <div class="form-group"><label>Product Name</label><input type="text" id="t2_prod_name" value="NH3"></div>
+            <div class="form-group"><label>Product Molar Mass (g/mol)</label><input type="number" id="t2_prod_mm" value="17.03" step="any"></div>
+            <div class="form-group"><label>Product Coeff</label><input type="number" id="t2_prod_coeff" value="2" step="any"></div>
+            <div class="form-group"><label>Actual Yield (g) [Optional]</label><input type="number" id="t2_actual_g" value="1.05" step="any"></div>
+          </div>
+
+          <button class="btn-calc" onclick="calcTool2()">⚡ Solve Stoichiometry</button>
+
+          <div id="t2_result" class="result-box"></div>
+
+          <details class="code-details">
+            <summary>View Tool 2 Python Code</summary>
+            <pre><code># Tool 2: Stoichiometry, Limiting Reactant, Excess Remaining & Percent Yield Solver
+
+def solve_limiting_reactant(r1_name, r1_g, r1_mm, r1_coeff,
+                            r2_name, r2_g, r2_mm, r2_coeff,
+                            prod_name, prod_mm, prod_coeff,
+                            actual_yield_g=None):
+    """
+    Solves stoichiometry reaction problems:
+    - Identifies Limiting and Excess reactants
+    - Calculates Theoretical Yield of product (in grams and moles)
+    - Calculates mass of Excess Reactant remaining unreacted
+    - Calculates Percent Yield if actual experimental yield is provided
+    """
+    moles_r1 = r1_g / r1_mm
+    moles_r2 = r2_g / r2_mm
+    
+    equiv_r1 = moles_r1 / r1_coeff
+    equiv_r2 = moles_r2 / r2_coeff
+    
+    if equiv_r1 < equiv_r2:
+        lr_name, xs_name = r1_name, r2_name
+        theo_moles_prod = equiv_r1 * prod_coeff
+        moles_xs_used = equiv_r1 * r2_coeff
+        xs_rem_g = (moles_r2 - moles_xs_used) * r2_mm
+    else:
+        lr_name, xs_name = r2_name, r1_name
+        theo_moles_prod = equiv_r2 * prod_coeff
+        moles_xs_used = equiv_r2 * r1_coeff
+        xs_rem_g = (moles_r1 - moles_xs_used) * r1_mm
+
+    theo_yield_g = theo_moles_prod * prod_mm
+
+    res = {
+        "Limiting Reactant": lr_name,
+        "Excess Reactant": xs_name,
+        f"Theoretical Yield of {prod_name} (g)": round(theo_yield_g, 3),
+        f"Theoretical Yield of {prod_name} (mol)": round(theo_moles_prod, 4),
+        f"Excess {xs_name} Remaining (g)": round(xs_rem_g, 3)
+    }
+    if actual_yield_g is not None:
+        pct = (actual_yield_g / theo_yield_g) * 100.0
+        res["Actual Yield (g)"] = actual_yield_g
+        res["Percent Yield (%)"] = f"{pct:.2f}%"
+    return res
+
+print("--- Tool 2: Stoichiometry & Limiting Reactant ---")
+# N2 + 3 H2 -> 2 NH3 with 1.00 g N2 and 3.00 g H2, actual yield = 1.05 g NH3
+result = solve_limiting_reactant(
+    r1_name="N2", r1_g=1.00, r1_mm=28.02, r1_coeff=1,
+    r2_name="H2", r2_g=3.00, r2_mm=2.016, r2_coeff=3,
+    prod_name="NH3", prod_mm=17.03, prod_coeff=2,
+    actual_yield_g=1.05
+)
+for k, v in result.items():
+    print(f"  {k}: {v}")
+</code></pre>
+          </details>
+        </div>
+
+
+
+                  <!-- Tool 3 -->
+        <div id="tool-3" class="tool-card">
+          <div class="tool-title">🧬 Tool 3: Empirical and Molecular Formula Determiner</div>
+          <div class="tool-desc">Determines simplest empirical formulas and molecular formulas with automated fraction multiplier detection (1/2, 1/3, 1/4).</div>
+
+          <div style="margin-bottom:12px;">
+            <button class="btn-preset" onclick="loadTool3Preset('cryolite')">Preset: Cryolite (Practice Exam 1-A Q12)</button>
+            <button class="btn-preset" onclick="loadTool3Preset('glucose')">Preset: Glucose (C: 40%, H: 6.71%, O: 53.29%)</button>
+            <button class="btn-preset" onclick="loadTool3Preset('iron_oxide')">Preset: Iron Oxide (Fe: 69.94%, O: 30.06%)</button>
+          </div>
+
+          <div class="calc-grid">
+            <div class="form-group" style="grid-column: span 2;">
+              <label>Mass or Percent Composition (e.g. "Na: 32.79, Al: 13.02, F: 54.19")</label>
+              <textarea id="t3_input" rows="2" style="font-family:monospace;">Na: 32.79, Al: 13.02, F: 54.19</textarea>
+            </div>
+            <div class="form-group">
+              <label>Molar Mass (g/mol) [Optional for Molecular Formula]</label>
+              <input type="number" id="t3_mm" placeholder="e.g. 180.16" step="any">
+            </div>
+          </div>
+
+          <button class="btn-calc" onclick="calcTool3()">🧬 Determine Formula</button>
+
+          <div id="t3_result" class="result-box"></div>
+
+          <details class="code-details">
+            <summary>View Tool 3 Python Code</summary>
+            <pre><code># Tool 3: Empirical and Molecular Formula Determiner
+
+ATOMIC_MASSES = {
+    "H": 1.008, "He": 4.003, "Li": 6.941, "Be": 9.012, "B": 10.811,
+    "C": 12.011, "N": 14.007, "O": 15.999, "F": 18.998, "Ne": 20.180,
+    "Na": 22.990, "Mg": 24.305, "Al": 26.982, "Si": 28.086, "P": 30.974,
+    "S": 32.065, "Cl": 35.453, "Ar": 39.948, "K": 39.098, "Ca": 40.078,
+    "Cr": 51.996, "Mn": 54.938, "Fe": 55.845, "Cu": 63.546, "Zn": 65.38,
+    "Br": 79.904, "Ag": 107.868, "I": 126.904, "Ba": 137.327, "Pb": 207.2
+}
+
+def solve_empirical_formula(pct_dict, molar_mass=None):
+    """
+    Determines empirical and molecular formulas from mass or percentage composition.
+    Recognizes common fractions (.5, .33, .67, .25, .75) to find whole-number formulas.
+    """
+    moles = {elem: pct / ATOMIC_MASSES[elem] for elem, pct in pct_dict.items()}
+    min_m = min(moles.values())
+    raw_ratios = {elem: m / min_m for elem, m in moles.items()}
+
+    # Determine integer multiplier for fractional ratios
+    multiplier = 1
+    for r in raw_ratios.values():
+        rem = r % 1
+        if 0.15 < rem < 0.85:
+            if abs(rem - 0.5) < 0.1:
+                multiplier = max(multiplier, 2)
+            elif abs(rem - 0.33) < 0.1 or abs(rem - 0.67) < 0.1:
+                multiplier = max(multiplier, 3)
+            elif abs(rem - 0.25) < 0.1 or abs(rem - 0.75) < 0.1:
+                multiplier = max(multiplier, 4)
+
+    final_subscripts = {elem: int(round(r * multiplier)) for elem, r in raw_ratios.items()}
+    emp_formula = "".join([f"{e}{final_subscripts[e] if final_subscripts[e] > 1 else ''}" for e in final_subscripts])
+    emp_mass = sum(final_subscripts[e] * ATOMIC_MASSES[e] for e in final_subscripts)
+
+    print("Calculated Mole Ratios:", {e: round(r, 2) for e, r in raw_ratios.items()})
+    print(f"Empirical Formula:       {emp_formula}")
+    print(f"Empirical Formula Mass:  {emp_mass:.2f} g/mol")
+
+    if molar_mass:
+        n = int(round(molar_mass / emp_mass))
+        mol_subscripts = {e: final_subscripts[e] * n for e in final_subscripts}
+        mol_formula = "".join([f"{e}{mol_subscripts[e] if mol_subscripts[e] > 1 else ''}" for e in mol_subscripts])
+        print(f"Molecular Multiplier n:  {n}")
+        print(f"Molecular Formula:       {mol_formula} (Molar Mass: {molar_mass:.2f} g/mol)")
+
+print("--- Tool 3: Empirical Formula Examples ---")
+print("1. Cryolite (Practice Exam 1-A Question 12):")
+solve_empirical_formula({"Na": 32.79, "Al": 13.02, "F": 54.19})
+
+print("\n2. Glucose (40.0% C, 6.71% H, 53.29% O, MM = 180.16 g/mol):")
+solve_empirical_formula({"C": 40.0, "H": 6.71, "O": 53.29}, molar_mass=180.16)
+</code></pre>
+          </details>
+        </div>
+
+
+        </section>
+      </div>
+
+      <!-- UNIT 2 CONTAINER -->
+      <div id="unit2-container" class="unit-pane" style="display: none;">
+        <!-- Hero Banner -->
+        <div class="unit-hero-banner u2-banner">
+          <div class="unit-hero-title">
+            <span>⚛️</span> Unit 2: Electronic Structure, Periodic Trends, Bonding &amp; Molecular Geometry
+          </div>
+          <p class="unit-hero-desc">
+            Complete study reference for General Chemistry I Unit 2. Master electromagnetic wave equations, Bohr transitions, quantum numbers, electron configurations, periodic table vectors ($Z_{\text{eff}}$, IE leaps), 8-step Lewis structures, VSEPR 3D geometries, hybridization, and Molecular Orbital Theory (MOT).
+          </p>
+          <div class="unit-hero-chips">
+            <span class="hero-chip">💡 Photons &amp; Light ($c = \lambda\nu, E = h\nu$)</span>
+            <span class="hero-chip">🌌 Bohr Hydrogen ($E_n, \Delta E$)</span>
+            <span class="hero-chip">🌊 de Broglie Wavelength ($\lambda = h/mv$)</span>
+            <span class="hero-chip">📈 Periodic Trends ($Z_{\text{eff}}$, IE, EA, Radius)</span>
+            <span class="hero-chip">✏️ 8-Step Lewis Dot Protocol</span>
+            <span class="hero-chip">📐 VSEPR 3D Shapes &amp; Bond Angles</span>
+            <span class="hero-chip">🧪 Hybridization ($sp$ to $sp^3d^2$)</span>
+            <span class="hero-chip">🧲 MOT Bond Order &amp; Magnetism</span>
+            <span class="hero-chip">🧮 Tools 4, 5, 6 &amp; 7</span>
+          </div>
+        </div>
+
+        <!-- U2 Section 1: Definitions -->
+        <section id="u2-section-1" class="content-section">
+          <h2>1. Dictionary of Unit 2 Definitions</h2>
+          <ul>
+<li><strong>Electromagnetic Radiation:</strong> Form of radiant energy propagating through a vacuum at the speed of light ($2.9979 \times 10^8\text{ m/s}$) exhibiting wave-like periodicity.</li>
+<li><strong>Wavelength ($\lambda$):</strong> The linear distance between two consecutive crests or troughs of an electromagnetic wave (m or nm).</li>
+<li><strong>Frequency ($\nu$):</strong> The number of complete wave cycles that pass a given point each second ($s^{-1}$ or Hz).</li>
+<li><strong>Amplitude:</strong> The vertical height from node to crest; dictates radiant intensity/brightness.</li>
+<li><strong>Quantum:</strong> The minimum discrete packet of energy that can be gained or lost by an atom.</li>
+<li><strong>Photon:</strong> A quantum of electromagnetic energy behaving as a particle with energy proportional to frequency ($E = h\nu$).</li>
+<li><strong>Photoelectric Effect:</strong> The emission of electrons from a clean metal surface when illuminated by light possessing sufficient threshold frequency.</li>
+<li><strong>Continuous Spectrum:</strong> A spectrum displaying an unbroken continuum of all wavelengths (e.g., rainbow, white light from sun/lamp).</li>
+<li><strong>Line Spectrum:</strong> A spectrum displaying sharp, discrete, isolated emission wavelengths unique to a specific gaseous element.</li>
+<li><strong>Ground State:</strong> The lowest possible energy electronic arrangement of an atom ($n=1$ in Bohr hydrogen).</li>
+<li><strong>Excited State:</strong> Any electronic state possessing higher energy than the ground state ($n &gt; 1$).</li>
+<li><strong>Atomic Orbital:</strong> A three-dimensional spatial probability distribution (wavefunction squared, $\psi^2$) where an electron has up to a 90% probability of being found.</li>
+<li><strong>Node:</strong> A region or plane in an orbital where the probability of finding an electron is identically zero ($\psi^2 = 0$).</li>
+<li><strong>Quantum Numbers:</strong> Set of four values ($n, l, m_l, m_s$) completely describing the energy, shape, orientation, and spin of an electron.</li>
+<li><strong>Degenerate Orbitals:</strong> Two or more orbitals possessing identical energy levels (e.g., the three $2p$ orbitals in an isolated atom).</li>
+<li><strong>Core Electrons:</strong> Inner-shell electrons occupying completely filled noble gas electron shells underneath the valence shell.</li>
+<li><strong>Valence Electrons:</strong> Electrons occupying the outermost principal quantum shell; dictate chemical bonding and periodic behavior.</li>
+<li><strong>Bonding Atomic Radius:</strong> One-half of the distance between the nuclei of two identical atoms covalently bonded together ($r = \frac{1}{2}d$).</li>
+<li><strong>Effective Nuclear Charge ($Z_{\text{eff}}$):</strong> The net inward positive electrostatic attraction experienced by a valence electron from the nucleus ($Z_{\text{eff}} = Z - S$).</li>
+<li><strong>Electron Shielding (Screening):</strong> The repulsive screening effect exerted by inner core electrons reducing the full nuclear charge felt by outer valence electrons.</li>
+<li><strong>First Ionization Energy ($I_1$):</strong> Minimum energy required to remove the highest-energy valence electron from an isolated gaseous ground-state atom (always endothermic).</li>
+<li><strong>Successive Ionization Energies ($I_2, I_3, \dots$):</strong> Energy required to remove subsequent electrons from positive ions ($I_1 &lt; I_2 &lt; I_3$).</li>
+<li><strong>Core Electron Quantum Leap:</strong> The massive multi-fold surge in ionization energy observed when an element runs out of valence electrons and core electrons are removed.</li>
+<li><strong>Electron Affinity ($EA$):</strong> The energy change associated with adding an electron to an isolated gaseous atom to form an anion.</li>
+<li><strong>Electronegativity ($EN$):</strong> The relative empirical ability of an atom in a molecule to attract shared bonding electrons toward itself.</li>
+<li><strong>Metallic Character:</strong> Physical and chemical tendencies associated with metals (luster, malleability, low ionization energy, cation formation, basic oxides).</li>
+<li><strong>Isoelectronic Series:</strong> A family of atoms and ions possessing the exact same total number of electrons and identical ground-state electron configurations.</li>
+<li><strong>Ionic Bond:</strong> Electrostatic attraction holding oppositely charged cations and anions together following electron transfer.</li>
+<li><strong>Covalent Bond:</strong> Chemical bond formed through mutual sharing of one or more electron pairs between two nonmetal nuclei.</li>
+<li><strong>Metallic Bond:</strong> Delocalized sharing of valence electrons within a mobile electron sea across a metal lattice.</li>
+<li><strong>Bond Length:</strong> The equilibrium distance between the nuclei of two bonded atoms where electrostatic attraction balances repulsion.</li>
+<li><strong>Bond Enthalpy (Dissociation Energy):</strong> The energy required to break one mole of a specific covalent bond in the gas phase (always positive/endothermic).</li>
+<li><strong>Octet Rule:</strong> Tendency of main-group atoms to gain, lose, or share electrons until surrounded by 8 valence electrons ($ns^2 np^6$).</li>
+<li><strong>Bonding Pair:</strong> A pair of shared valence electrons participating directly in a covalent bond.</li>
+<li><strong>Lone Pair (Nonbonding Pair):</strong> An unshared pair of valence electrons localized on a single atom.</li>
+<li><strong>Formal Charge:</strong> The theoretical charge assigned to an individual atom in a Lewis structure assuming equal sharing of shared bonds.</li>
+<li><strong>Resonance Structures:</strong> Two or more valid Lewis dot structures representing the same molecule with identical atom connectivity but differing electron positions.</li>
+<li><strong>Resonance Hybrid:</strong> The true, blended molecular electronic structure representing the weighted average of all contributing resonance forms.</li>
+<li><strong>Electron Domain:</strong> A region of high electron density around a central atom (every single bond, double bond, triple bond, or lone pair = 1 domain).</li>
+<li><strong>Electron Pair Arrangement (Electron-Domain Geometry):</strong> The 3D spatial distribution of all electron domains around the central atom.</li>
+<li><strong>Molecular Geometry (Shape):</strong> The actual 3D arrangement of only the bonded atoms around the central atom.</li>
+<li><strong>Valence Shell Electron Pair Repulsion (VSEPR) Theory:</strong> Model postulating that electron domains arrange around a central atom to minimize mutual electrostatic repulsions.</li>
+<li><strong>Hybridization:</strong> The quantum mathematical mixing of atomic orbitals on a central atom to produce equivalent hybrid orbitals matching observed bond angles.</li>
+<li><strong>Sigma ($\sigma$) Bond:</strong> A covalent bond formed by direct head-on overlap of orbitals along the internuclear axis.</li>
+<li><strong>Pi ($\pi$) Bond:</strong> A covalent bond formed by parallel sideways overlap of unhybridized $p$-orbitals above and below the internuclear axis.</li>
+<li><strong>Dipole Moment ($\mu$):</strong> Quantitative measure of the separation of positive and negative charges in a polar molecule ($\mu = Q \times r$).</li>
+<li><strong>Molecular Polarity:</strong> Property of an asymmetrical molecule where individual bond dipoles fail to cancel, yielding a net molecular dipole moment.</li>
+<li><strong>Molecular Orbital Theory (MOT):</strong> Model describing electrons in molecules by wavefunctions delocalized across the entire molecule rather than individual atoms.</li>
+<li><strong>Bonding Molecular Orbital:</strong> Lower-energy molecular orbital formed by constructive wave interference that concentrates electron density between nuclei.</li>
+<li><strong>Antibonding Molecular Orbital ($\sigma^<em>, \pi^</em>$):</strong> Higher-energy molecular orbital formed by destructive wave interference that introduces a node between nuclei.</li>
+<li><strong>Bond Order (MO):</strong> Metric measuring bond stability and strength equal to one-half the difference between bonding and antibonding electrons.</li>
+<li><strong>Diamagnetism:</strong> Property of substances with all electrons paired; weakly repelled by external magnetic fields.</li>
+<li><strong>Paramagnetism:</strong> Property of substances with one or more unpaired electrons; attracted into external magnetic fields.</li>
+</ul>
+
+        </section>
+
+        <!-- U2 Section 2: Quantum Scientists & Ground Rules -->
+        <section id="u2-section-2" class="content-section">
+          <h2>2. Unit 2 Quantum Pioneers, Discoveries &amp; Electronic Ground Rules</h2>
+          <h3>Quantum Mechanics Registry</h3>
+          <table>
+            <table>
+<thead>
+<tr>
+<th style="text-align: left;">Scientist &amp; Era</th>
+<th style="text-align: left;">Core Experiment / Apparatus</th>
+<th style="text-align: left;">Major Accomplishments &amp; Postulates</th>
+<th style="text-align: left;">Guiding Principle / Scientific Impact</th>
+</tr>
+</thead>
+<tbody>
+
+            <tbody>
+              <tr>
+<td style="text-align: left;"><strong>Max Planck</strong> (1900)</td>
+<td style="text-align: left;">Blackbody radiation emissions</td>
+<td style="text-align: left;">Proposed <strong>Quantization of Energy</strong>; discovered <strong>Planck's Constant</strong> ($h = 6.626 \times 10^{-34}\text{ J}\cdot\text{s}$)</td>
+<td style="text-align: left;">Energy is emitted/absorbed only in discrete whole-number multiples of quanta ($E = nh\nu$).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Albert Einstein</strong> (1905)</td>
+<td style="text-align: left;"><strong>Photoelectric Effect</strong> analysis</td>
+<td style="text-align: left;">Introduced the <strong>Photon</strong>; established wave-particle duality of light ($E = h\nu = hc/\lambda$)</td>
+<td style="text-align: left;">Light behaves as a localized stream of energy packets. One photon dislodges one electron if frequency surpasses threshold.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Niels Bohr</strong> (1913)</td>
+<td style="text-align: left;">Hydrogen atomic line spectrum</td>
+<td style="text-align: left;">Proposed the <strong>Bohr Model of the Atom</strong>; quantized angular momentum orbits</td>
+<td style="text-align: left;">Electrons occupy stationary circular orbits with discrete energy levels ($E_n = -R_H/n^2$). Explains hydrogen line spectra, but fails for $Z \ge 2$.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Louis de Broglie</strong> (1924)</td>
+<td style="text-align: left;">Dual nature of matter synthesis</td>
+<td style="text-align: left;">Formulated the <strong>de Broglie Matter Wavelength</strong> ($\lambda = h/mv$)</td>
+<td style="text-align: left;">All moving matter with momentum exhibits wave properties. Intermediate-mass particles like electrons display measurable wave diffraction.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Werner Heisenberg</strong> (1927)</td>
+<td style="text-align: left;">Quantum mechanics matrix formulations</td>
+<td style="text-align: left;">Formulated the <strong>Heisenberg Uncertainty Principle</strong></td>
+<td style="text-align: left;">Fundamentally impossible to simultaneously measure both the position and momentum of a subatomic particle. Disproved fixed 2D planetary Bohr orbits.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Erwin Schrödinger</strong> (1926)</td>
+<td style="text-align: left;">Wave mechanics differential equation</td>
+<td style="text-align: left;">Formulated the <strong>Schrödinger Wave Equation</strong> ($H\psi = E\psi$); introduced <strong>Atomic Orbitals</strong></td>
+<td style="text-align: left;">Wavefunction $\psi^2$ maps 3D electron probability density clouds rather than deterministic paths.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Wolfgang Pauli</strong> (1925)</td>
+<td style="text-align: left;">Atomic spectroscopic analysis</td>
+<td style="text-align: left;">Established the <strong>Pauli Exclusion Principle</strong></td>
+<td style="text-align: left;">No two electrons in an atom can have the identical set of 4 quantum numbers ($n, l, m_l, m_s$). An orbital holds at most 2 electrons with opposite spins.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Friedrich Hund</strong> (1927)</td>
+<td style="text-align: left;">Spectral term analysis</td>
+<td style="text-align: left;">Established <strong>Hund's Rule of Maximum Multiplicity</strong></td>
+<td style="text-align: left;">In degenerate orbitals ($p, d, f$), electrons occupy orbitals singly with parallel spins before pairing to minimize repulsions.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Gilbert N. Lewis</strong> (1916)</td>
+<td style="text-align: left;">Chemical bonding electronic theory</td>
+<td style="text-align: left;">Introduced <strong>Lewis Dot Symbols</strong>, covalent electron pair sharing, and the <strong>Octet Rule</strong></td>
+<td style="text-align: left;">Valence electrons govern bonding; atoms gain, lose, or share electrons to reach a stable noble gas configuration ($ns^2 np^6$).</td>
+</tr>
+</tbody>
+
+            </tbody>
+          </table>
+          <hr />
+          <h3>Guiding Principles &amp; Electronic Ground Rules</h3>
+<ol>
+<li><strong>Aufbau Principle:</strong> Orbitals fill strictly in order of increasing energy level: $1s &lt; 2s &lt; 2p &lt; 3s &lt; 3p &lt; 4s &lt; 3d &lt; 4p &lt; 5s &lt; 4d &lt; 5p &lt; 6s &lt; 4f \dots$</li>
+<li><strong>Pauli Exclusion Principle:</strong> Each atomic orbital holds a maximum of two electrons, and they must have opposite spins ($\uparrow\downarrow$).</li>
+<li><strong>Hund's Rule:</strong> In orbitals of equal energy (degenerate subshells), electrons must occupy each orbital singly with parallel spins before pairing.</li>
+<li><strong>Stability of Half-Filled / Filled $d$-Subshells:</strong> When an atom is one electron away from a half-filled ($d^5$) or completely filled ($d^{10}$) subshell, an $s$-electron promotes into the $d$-subshell:</li>
+<li><strong>Chromium (Cr, $Z=24$):</strong> $[\text{Ar}]\,4s^1 3d^5$ (not $4s^2 3d^4$)</li>
+<li><strong>Copper (Cu, $Z=29$):</strong> $[\text{Ar}]\,4s^1 3d^{10}$ (not $4s^2 3d^9$)</li>
+<li><strong>Molybdenum (Mo, $Z=42$):</strong> $[\text{Kr}]\,5s^1 4d^5$</li>
+<li><strong>Silver (Ag, $Z=47$):</strong> $[\text{Kr}]\,5s^1 4d^{10}$</li>
+<li><strong>Cation Removal Priority Rule:</strong> Transition and post-transition metals lose electrons from the outermost valence shell (highest $n$, the $s$ and $p$ electrons) <strong>first</strong> before losing any $(n-1)d$ electrons:</li>
+<li>$\text{Sn} \to \mathbf{Sn^{2+}: [\text{Kr}]\,5s^2 4d^{10}}$ (loses $5p^2$)</li>
+<li>$\text{Ni} \to \mathbf{Ni^{2+}: [\text{Ar}]\,3d^8}$ (loses $4s^2$)</li>
+<li>$\text{Fe} \to \mathbf{Fe^{2+}: [\text{Ar}]\,3d^6}$ and $\mathbf{Fe^{3+}: [\text{Ar}]\,3d^5}$ (loses $4s^2$ then one $3d$)</li>
+</ol>
 <hr />
-<h3>2. Unit 2 Formulas &amp; Equations</h3>
+
+        </section>
+
+        <!-- U2 Section 3: Constants & Electronegativity -->
+        <section id="u2-section-3" class="content-section">
+          <h2>3. Unit 2 Quantum Physical Constants &amp; Electronegativities</h2>
+          <h3>Table 1: Fundamental Quantum &amp; Physical Constants</h3>
+          <table>
+            <table>
+<thead>
+<tr>
+<th style="text-align: left;">Constant Name</th>
+<th style="text-align: left;">Symbol</th>
+<th style="text-align: left;">Exact / Accepted Value</th>
+<th style="text-align: left;">Units &amp; Relevance</th>
+</tr>
+</thead>
+<tbody>
+
+            <tbody>
+              <tr>
+<td style="text-align: left;"><strong>Speed of Light in Vacuum</strong></td>
+<td style="text-align: center;">$c$</td>
+<td style="text-align: center;">$2.9979 \times 10^8$ (or $3.00 \times 10^8$)</td>
+<td style="text-align: center;">$\text{m/s}$</td>
+<td style="text-align: left;">Electromagnetic radiation ($c = \lambda\nu$)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Planck's Constant</strong></td>
+<td style="text-align: center;">$h$</td>
+<td style="text-align: center;">$6.626 \times 10^{-34}$</td>
+<td style="text-align: center;">$\text{J}\cdot\text{s}$</td>
+<td style="text-align: left;">Quantum energy &amp; photons ($E = h\nu$)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Rydberg Energy Factor</strong></td>
+<td style="text-align: center;">$R_H$ or $hcR_H$</td>
+<td style="text-align: center;">$2.178 \times 10^{-18}$ (or $2.18 \times 10^{-18}$)</td>
+<td style="text-align: center;">$\text{J}$</td>
+<td style="text-align: left;">Bohr hydrogen energy levels &amp; transitions</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Electron Rest Mass</strong></td>
+<td style="text-align: center;">$m_e$</td>
+<td style="text-align: center;">$9.109 \times 10^{-31}\text{ kg} = 9.11 \times 10^{-28}\text{ g}$</td>
+<td style="text-align: center;">$\text{kg}$ or $\text{g}$</td>
+<td style="text-align: left;">de Broglie matter wavelength calculations</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Avogadro's Number</strong></td>
+<td style="text-align: center;">$N_A$</td>
+<td style="text-align: center;">$6.022 \times 10^{23}$</td>
+<td style="text-align: center;">$\text{particles/mol}$</td>
+<td style="text-align: left;">Mole bridge for atoms, molecules, ions</td>
+</tr>
+<tr>
+
+            </tbody>
+          </table>
+          <hr />
+          <h3>Table 5: Memorized Pauling Electronegativities &amp; 7 Diatomic Molecules</h3>
+<ul>
+<li><strong>Pauling Electronegativities:</strong>
+  $$\mathbf{F = 4.0} \quad&gt;\quad \mathbf{O = 3.5} \quad&gt;\quad \mathbf{N = 3.0} \;=\; \mathbf{Cl = 3.0} \quad&gt;\quad \mathbf{C = 2.5} \quad&gt;\quad \mathbf{H = 2.1}$$</li>
+<li><strong>The 7 Diatomic Molecules:</strong>
+  $$\mathbf{H_2, N_2, O_2, F_2, Cl_2, Br_2, I_2}$$
+  <em>(Mnemonic: 'Have No Fear Of Ice Cold Beer' or the '7' shape on the periodic table)</em></li>
+</ul>
+<hr />
+
+          <div style="background:var(--bg-input); border:1px solid var(--border-card); border-radius:10px; padding:18px; margin:16px 0;">
+            <h4 style="margin-bottom:8px; color:var(--primary);">Bond Polarity Classification by Electronegativity Difference ($\Delta EN$):</h4>
+            <ul style="margin-left:20px;">
+              <li><strong>$\Delta EN \le 0.4$:</strong> Nonpolar Covalent Bond (Equal electron sharing; e.g., $\text{C—H}$, $\text{Cl—Cl}$)</li>
+              <li><strong>$0.4 &lt; \Delta EN &lt; 2.0$:</strong> Polar Covalent Bond (Unequal electron sharing with dipole moment; e.g., $\text{H—F}$, $\text{C—O}$)</li>
+              <li><strong>$\Delta EN \ge 2.0$:</strong> Ionic Bond (Complete electron transfer from metal to nonmetal; e.g., $\text{Na—Cl}$)</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- U2 Section 4: Formulas & Periodic Trends -->
+        <section id="u2-section-4" class="content-section">
+          <h2>4. Unit 2 Master Quantum Formulas, Calculations &amp; Periodic Trends</h2>
+          <h3>2. Unit 2 Formulas &amp; Equations</h3>
 <ul>
 <li><strong>Electromagnetic Wave Relationship:</strong>
   $$c = \lambda \nu \implies \nu = \frac{c}{\lambda} \implies \lambda = \frac{c}{\nu}$$</li>
@@ -1081,8 +1877,9 @@
 <li><strong>Molecular Orbital Bond Order:</strong>
   $$\text{Bond Order} = \frac{(\text{Bonding } e^-) - (\text{Antibonding } e^-)}{2}$$</li>
 </ul>
-<hr />
-<h3>3. The Master Periodic Table Vector Map &amp; Shortcut Methods</h3>
+
+          <hr />
+          <h3>3. The Master Periodic Table Vector Map &amp; Shortcut Methods</h3>
 <pre><code>        UP &amp; RIGHT (↗ toward F / He)             DOWN &amp; LEFT (↙ toward Fr / Cs)
     ------------------------------------       ----------------------------------
     • Ionization Energy increases              • Atomic Radius increases
@@ -1113,12 +1910,13 @@
 <li>Jump between $I_3$ and $I_4 \implies 3$ valence $e^- \implies$ <strong>Group 3A</strong> (e.g., Al)</li>
 </ul>
 <hr />
-      </section>
 
-      <!-- Section 5 -->
-      <section id="section-5" class="content-section">
-        <p><a id="section-5"></a></p>
-<h2>5. Chemical Bonding, 8-Step Lewis Dot Structures, VSEPR Shapes, Hybridization &amp; MOT</h2>
+        </section>
+
+        <!-- U2 Section 5: Chemical Bonding, Lewis & VSEPR -->
+        <section id="u2-section-5" class="content-section">
+          <h2>5. Chemical Bonding, 8-Step Lewis Dot Structures, VSEPR Shapes, Hybridization &amp; MOT</h2>
+          <h2>5. Chemical Bonding, 8-Step Lewis Dot Structures, VSEPR Shapes, Hybridization &amp; MOT</h2>
 <h3>The 8-Step Lewis Dot Structure Protocol (Chapter 8)</h3>
 <ol>
 <li><strong>Determine the Skeleton:</strong></li>
@@ -1296,346 +2094,15 @@
 <li><strong>Paramagnetic:</strong> $\ge 1$ unpaired electrons (attracted into magnetic field, e.g., $\text{O}_2$).</li>
 </ul>
 <hr />
-      </section>
 
-      <!-- Section 6: Interactive Calculators -->
-      <section id="section-6" class="content-section">
-        <h1>6. Interactive Chemistry Study Calculators</h1>
-        <p>Use the offline calculation engines below to instantly verify homework, test cases, and exam problems with full step-by-step breakdowns.</p>
+        </section>
 
-        <!-- Tool 1 -->
-        <div id="tool-1" class="tool-card">
-          <div class="tool-title">🧮 Tool 1: Unit & Temperature Converter</div>
-          <div class="tool-desc">Convert metric prefixes, English-to-Metric dimensions, and Fahrenheit/Celsius/Kelvin temperatures.</div>
+        <!-- U2 Calculators Section -->
+        <section id="u2-calculators" class="content-section">
+          <h1>Unit 2 Interactive Calculators</h1>
+          <p>Instant offline calculation engines for Unit 2 electromagnetic radiation, Bohr transitions, de Broglie matter wavelengths, formal charges, polarity, and molecular orbital theory.</p>
 
-          <h4 style="margin-bottom:8px;">A. Metric Prefix Converter</h4>
-          <div class="calc-grid">
-            <div class="form-group">
-              <label>Value</label>
-              <input type="number" id="t1_val" value="1" step="any" oninput="calcTool1Prefix()">
-            </div>
-            <div class="form-group">
-              <label>From Prefix</label>
-              <select id="t1_from" onchange="calcTool1Prefix()">
-                <option value="G">G (Giga, 10⁹)</option>
-                <option value="M">M (Mega, 10⁶)</option>
-                <option value="k" selected>k (kilo, 10³)</option>
-                <option value="d">d (deci, 10⁻¹)</option>
-                <option value="c">c (centi, 10⁻²)</option>
-                <option value="m">m (milli, 10⁻³)</option>
-                <option value="u">µ (micro, 10⁻⁶)</option>
-                <option value="n">n (nano, 10⁻⁹)</option>
-                <option value="p">p (pico, 10⁻¹²)</option>
-                <option value="">(Base unit, 10⁰)</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label>To Prefix</label>
-              <select id="t1_to" onchange="calcTool1Prefix()">
-                <option value="G">G (Giga, 10⁹)</option>
-                <option value="M">M (Mega, 10⁶)</option>
-                <option value="k">k (kilo, 10³)</option>
-                <option value="d">d (deci, 10⁻¹)</option>
-                <option value="c">c (centi, 10⁻²)</option>
-                <option value="m" selected>m (milli, 10⁻³)</option>
-                <option value="u">µ (micro, 10⁻⁶)</option>
-                <option value="n">n (nano, 10⁻⁹)</option>
-                <option value="p">p (pico, 10⁻¹²)</option>
-                <option value="">(Base unit, 10⁰)</option>
-              </select>
-            </div>
-          </div>
-          <div style="font-size:0.95rem; font-weight:700; margin-bottom:16px;">
-            Result: <span id="t1_res" style="color:var(--primary);">1.0000e+06</span>
-          </div>
-
-          <h4 style="margin-bottom:8px;">B. English-to-Metric & Pressure Converter</h4>
-          <div class="calc-grid">
-            <div class="form-group">
-              <label>Value</label>
-              <input type="number" id="t1_em_val" value="5.00" step="any" oninput="calcTool1EM()">
-            </div>
-            <div class="form-group">
-              <label>Conversion Mode</label>
-              <select id="t1_em_mode" onchange="calcTool1EM()">
-                <option value="in_cm">Inches to Centimeters (1 in = 2.54 cm)</option>
-                <option value="cm_in">Centimeters to Inches</option>
-                <option value="lb_g">Pounds to Grams (1 lb = 453.592 g)</option>
-                <option value="g_lb">Grams to Pounds</option>
-                <option value="gal_L">Gallons to Liters (1 gal = 3.78541 L)</option>
-                <option value="L_gal">Liters to Gallons</option>
-                <option value="atm_mmHg">atm to mmHg / torr (1 atm = 760 mmHg)</option>
-                <option value="mmHg_atm">mmHg / torr to atm</option>
-                <option value="atm_kPa">atm to kPa (1 atm = 101.325 kPa)</option>
-              </select>
-            </div>
-          </div>
-          <div style="font-size:0.95rem; font-weight:700; margin-bottom:16px;">
-            Result: <span id="t1_em_res" style="color:var(--primary);">12.7 cm</span>
-          </div>
-
-          <h4 style="margin-bottom:8px;">C. Temperature Converter</h4>
-          <div class="calc-grid">
-            <div class="form-group">
-              <label>Temperature Value</label>
-              <input type="number" id="t1_temp_val" value="72" step="any" oninput="calcTool1Temp()">
-            </div>
-            <div class="form-group">
-              <label>From Scale</label>
-              <select id="t1_temp_from" onchange="calcTool1Temp()">
-                <option value="F" selected>Fahrenheit (°F)</option>
-                <option value="C">Celsius (°C)</option>
-                <option value="K">Kelvin (K)</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label>To Scale</label>
-              <select id="t1_temp_to" onchange="calcTool1Temp()">
-                <option value="F">Fahrenheit (°F)</option>
-                <option value="C">Celsius (°C)</option>
-                <option value="K" selected>Kelvin (K)</option>
-              </select>
-            </div>
-          </div>
-          <div style="font-size:0.95rem; font-weight:700;">
-            Result: <span id="t1_temp_res" style="color:var(--primary);">295.37 K</span>
-          </div>
-
-          <details class="code-details">
-            <summary>View Tool 1 Python Code</summary>
-            <pre><code># Tool 1: Comprehensive Unit & Temperature Converter
-# Covers Metric Prefixes, English-Metric Equivalence, and Temperature Scales
-
-METRIC_PREFIXES = {
-    "G": ("giga", 1e9), "M": ("mega", 1e6), "k": ("kilo", 1e3),
-    "d": ("deci", 1e-1), "c": ("centi", 1e-2), "m": ("milli", 1e-3),
-    "u": ("micro", 1e-6), "n": ("nano", 1e-9), "p": ("pico", 1e-12), "": ("base", 1.0)
-}
-
-def convert_metric_prefix(value, from_pfx, to_pfx):
-    """Converts a numeric value between metric prefixes (e.g. 'k' to 'm')."""
-    base_val = value * METRIC_PREFIXES[from_pfx][1]
-    return f"{base_val / METRIC_PREFIXES[to_pfx][1]:.4e}"
-
-def convert_temp(val, from_scale, to_scale):
-    """Converts temperature between Fahrenheit ('F'), Celsius ('C'), and Kelvin ('K')."""
-    from_s, to_s = from_scale.upper(), to_scale.upper()
-    c = (val - 32) / 1.8 if from_s == "F" else (val if from_s == "C" else val - 273.15)
-    if to_s == "C": return round(c, 2)
-    elif to_s == "F": return round(1.8 * c + 32, 2)
-    elif to_s == "K": return round(c + 273.15, 2)
-
-def convert_english_metric(val, unit_from, unit_to):
-    """Common CHEM 151 conversion factors: in<->cm, lb<->g, gal<->L, atm<->mmHg/torr."""
-    factors = {
-        ("in", "cm"): 2.54, ("cm", "in"): 1 / 2.54,
-        ("lb", "g"): 453.592, ("g", "lb"): 1 / 453.592,
-        ("gal", "l"): 3.78541, ("l", "gal"): 1 / 3.78541,
-        ("atm", "mmhg"): 760.0, ("mmhg", "atm"): 1 / 760.0,
-        ("atm", "torr"): 760.0, ("torr", "atm"): 1 / 760.0,
-        ("atm", "kpa"): 101.325, ("kpa", "atm"): 1 / 101.325
-    }
-    key = (unit_from.lower(), unit_to.lower())
-    if key in factors:
-        return round(val * factors[key], 4)
-    raise ValueError(f"Conversion from {unit_from} to {unit_to} not supported.")
-
-print("--- Tool 1: Unit & Temperature Conversions ---")
-print("1 kg to mg:       ", convert_metric_prefix(1, "k", "m"), "mg")
-print("1 ds to ps:       ", convert_metric_prefix(1, "d", "p"), "ps")
-print("72 °F to Celsius: ", convert_temp(72, "F", "C"), "°C")
-print("72 °F to Kelvin:  ", convert_temp(72, "F", "K"), "K")
-print("5.00 in to cm:    ", convert_english_metric(5.00, "in", "cm"), "cm")
-print("1.25 atm to mmHg: ", convert_english_metric(1.25, "atm", "mmHg"), "mmHg")
-</code></pre>
-          </details>
-        </div>
-
-        <!-- Tool 2 -->
-        <div id="tool-2" class="tool-card">
-          <div class="tool-title">⚖️ Tool 2: Stoichiometry, Limiting Reactant & Percent Yield Solver</div>
-          <div class="tool-desc">Solves two-reactant stoichiometry reactions, determines the limiting reactant, theoretical yield, excess remaining, and percent yield.</div>
-
-          <div style="margin-bottom:12px;">
-            <button class="btn-preset" onclick="loadTool2Preset('nh3')">Preset: Review Sheet N₂ + 3H₂ → 2NH₃</button>
-            <button class="btn-preset" onclick="loadTool2Preset('water')">Preset: 2H₂ + O₂ → 2H₂O</button>
-          </div>
-
-          <h4 style="margin:8px 0;">Reactant 1</h4>
-          <div class="calc-grid">
-            <div class="form-group"><label>Formula/Name</label><input type="text" id="t2_r1_name" value="N2"></div>
-            <div class="form-group"><label>Mass (g)</label><input type="number" id="t2_r1_g" value="1.00" step="any"></div>
-            <div class="form-group"><label>Molar Mass (g/mol)</label><input type="number" id="t2_r1_mm" value="28.02" step="any"></div>
-            <div class="form-group"><label>Balanced Coeff</label><input type="number" id="t2_r1_coeff" value="1" step="any"></div>
-          </div>
-
-          <h4 style="margin:8px 0;">Reactant 2</h4>
-          <div class="calc-grid">
-            <div class="form-group"><label>Formula/Name</label><input type="text" id="t2_r2_name" value="H2"></div>
-            <div class="form-group"><label>Mass (g)</label><input type="number" id="t2_r2_g" value="3.00" step="any"></div>
-            <div class="form-group"><label>Molar Mass (g/mol)</label><input type="number" id="t2_r2_mm" value="2.016" step="any"></div>
-            <div class="form-group"><label>Balanced Coeff</label><input type="number" id="t2_r2_coeff" value="3" step="any"></div>
-          </div>
-
-          <h4 style="margin:8px 0;">Target Product & Actual Yield</h4>
-          <div class="calc-grid">
-            <div class="form-group"><label>Product Name</label><input type="text" id="t2_prod_name" value="NH3"></div>
-            <div class="form-group"><label>Product Molar Mass (g/mol)</label><input type="number" id="t2_prod_mm" value="17.03" step="any"></div>
-            <div class="form-group"><label>Product Coeff</label><input type="number" id="t2_prod_coeff" value="2" step="any"></div>
-            <div class="form-group"><label>Actual Yield (g) [Optional]</label><input type="number" id="t2_actual_g" value="1.05" step="any"></div>
-          </div>
-
-          <button class="btn-calc" onclick="calcTool2()">⚡ Solve Stoichiometry</button>
-
-          <div id="t2_result" class="result-box"></div>
-
-          <details class="code-details">
-            <summary>View Tool 2 Python Code</summary>
-            <pre><code># Tool 2: Stoichiometry, Limiting Reactant, Excess Remaining & Percent Yield Solver
-
-def solve_limiting_reactant(r1_name, r1_g, r1_mm, r1_coeff,
-                            r2_name, r2_g, r2_mm, r2_coeff,
-                            prod_name, prod_mm, prod_coeff,
-                            actual_yield_g=None):
-    """
-    Solves stoichiometry reaction problems:
-    - Identifies Limiting and Excess reactants
-    - Calculates Theoretical Yield of product (in grams and moles)
-    - Calculates mass of Excess Reactant remaining unreacted
-    - Calculates Percent Yield if actual experimental yield is provided
-    """
-    moles_r1 = r1_g / r1_mm
-    moles_r2 = r2_g / r2_mm
-    
-    equiv_r1 = moles_r1 / r1_coeff
-    equiv_r2 = moles_r2 / r2_coeff
-    
-    if equiv_r1 < equiv_r2:
-        lr_name, xs_name = r1_name, r2_name
-        theo_moles_prod = equiv_r1 * prod_coeff
-        moles_xs_used = equiv_r1 * r2_coeff
-        xs_rem_g = (moles_r2 - moles_xs_used) * r2_mm
-    else:
-        lr_name, xs_name = r2_name, r1_name
-        theo_moles_prod = equiv_r2 * prod_coeff
-        moles_xs_used = equiv_r2 * r1_coeff
-        xs_rem_g = (moles_r1 - moles_xs_used) * r1_mm
-
-    theo_yield_g = theo_moles_prod * prod_mm
-
-    res = {
-        "Limiting Reactant": lr_name,
-        "Excess Reactant": xs_name,
-        f"Theoretical Yield of {prod_name} (g)": round(theo_yield_g, 3),
-        f"Theoretical Yield of {prod_name} (mol)": round(theo_moles_prod, 4),
-        f"Excess {xs_name} Remaining (g)": round(xs_rem_g, 3)
-    }
-    if actual_yield_g is not None:
-        pct = (actual_yield_g / theo_yield_g) * 100.0
-        res["Actual Yield (g)"] = actual_yield_g
-        res["Percent Yield (%)"] = f"{pct:.2f}%"
-    return res
-
-print("--- Tool 2: Stoichiometry & Limiting Reactant ---")
-# N2 + 3 H2 -> 2 NH3 with 1.00 g N2 and 3.00 g H2, actual yield = 1.05 g NH3
-result = solve_limiting_reactant(
-    r1_name="N2", r1_g=1.00, r1_mm=28.02, r1_coeff=1,
-    r2_name="H2", r2_g=3.00, r2_mm=2.016, r2_coeff=3,
-    prod_name="NH3", prod_mm=17.03, prod_coeff=2,
-    actual_yield_g=1.05
-)
-for k, v in result.items():
-    print(f"  {k}: {v}")
-</code></pre>
-          </details>
-        </div>
-
-        <!-- Tool 3 -->
-        <div id="tool-3" class="tool-card">
-          <div class="tool-title">🧬 Tool 3: Empirical and Molecular Formula Determiner</div>
-          <div class="tool-desc">Determines simplest empirical formulas and molecular formulas with automated fraction multiplier detection (1/2, 1/3, 1/4).</div>
-
-          <div style="margin-bottom:12px;">
-            <button class="btn-preset" onclick="loadTool3Preset('cryolite')">Preset: Cryolite (Practice Exam 1-A Q12)</button>
-            <button class="btn-preset" onclick="loadTool3Preset('glucose')">Preset: Glucose (C: 40%, H: 6.71%, O: 53.29%)</button>
-            <button class="btn-preset" onclick="loadTool3Preset('iron_oxide')">Preset: Iron Oxide (Fe: 69.94%, O: 30.06%)</button>
-          </div>
-
-          <div class="calc-grid">
-            <div class="form-group" style="grid-column: span 2;">
-              <label>Mass or Percent Composition (e.g. "Na: 32.79, Al: 13.02, F: 54.19")</label>
-              <textarea id="t3_input" rows="2" style="font-family:monospace;">Na: 32.79, Al: 13.02, F: 54.19</textarea>
-            </div>
-            <div class="form-group">
-              <label>Molar Mass (g/mol) [Optional for Molecular Formula]</label>
-              <input type="number" id="t3_mm" placeholder="e.g. 180.16" step="any">
-            </div>
-          </div>
-
-          <button class="btn-calc" onclick="calcTool3()">🧬 Determine Formula</button>
-
-          <div id="t3_result" class="result-box"></div>
-
-          <details class="code-details">
-            <summary>View Tool 3 Python Code</summary>
-            <pre><code># Tool 3: Empirical and Molecular Formula Determiner
-
-ATOMIC_MASSES = {
-    "H": 1.008, "He": 4.003, "Li": 6.941, "Be": 9.012, "B": 10.811,
-    "C": 12.011, "N": 14.007, "O": 15.999, "F": 18.998, "Ne": 20.180,
-    "Na": 22.990, "Mg": 24.305, "Al": 26.982, "Si": 28.086, "P": 30.974,
-    "S": 32.065, "Cl": 35.453, "Ar": 39.948, "K": 39.098, "Ca": 40.078,
-    "Cr": 51.996, "Mn": 54.938, "Fe": 55.845, "Cu": 63.546, "Zn": 65.38,
-    "Br": 79.904, "Ag": 107.868, "I": 126.904, "Ba": 137.327, "Pb": 207.2
-}
-
-def solve_empirical_formula(pct_dict, molar_mass=None):
-    """
-    Determines empirical and molecular formulas from mass or percentage composition.
-    Recognizes common fractions (.5, .33, .67, .25, .75) to find whole-number formulas.
-    """
-    moles = {elem: pct / ATOMIC_MASSES[elem] for elem, pct in pct_dict.items()}
-    min_m = min(moles.values())
-    raw_ratios = {elem: m / min_m for elem, m in moles.items()}
-
-    # Determine integer multiplier for fractional ratios
-    multiplier = 1
-    for r in raw_ratios.values():
-        rem = r % 1
-        if 0.15 < rem < 0.85:
-            if abs(rem - 0.5) < 0.1:
-                multiplier = max(multiplier, 2)
-            elif abs(rem - 0.33) < 0.1 or abs(rem - 0.67) < 0.1:
-                multiplier = max(multiplier, 3)
-            elif abs(rem - 0.25) < 0.1 or abs(rem - 0.75) < 0.1:
-                multiplier = max(multiplier, 4)
-
-    final_subscripts = {elem: int(round(r * multiplier)) for elem, r in raw_ratios.items()}
-    emp_formula = "".join([f"{e}{final_subscripts[e] if final_subscripts[e] > 1 else ''}" for e in final_subscripts])
-    emp_mass = sum(final_subscripts[e] * ATOMIC_MASSES[e] for e in final_subscripts)
-
-    print("Calculated Mole Ratios:", {e: round(r, 2) for e, r in raw_ratios.items()})
-    print(f"Empirical Formula:       {emp_formula}")
-    print(f"Empirical Formula Mass:  {emp_mass:.2f} g/mol")
-
-    if molar_mass:
-        n = int(round(molar_mass / emp_mass))
-        mol_subscripts = {e: final_subscripts[e] * n for e in final_subscripts}
-        mol_formula = "".join([f"{e}{mol_subscripts[e] if mol_subscripts[e] > 1 else ''}" for e in mol_subscripts])
-        print(f"Molecular Multiplier n:  {n}")
-        print(f"Molecular Formula:       {mol_formula} (Molar Mass: {molar_mass:.2f} g/mol)")
-
-print("--- Tool 3: Empirical Formula Examples ---")
-print("1. Cryolite (Practice Exam 1-A Question 12):")
-solve_empirical_formula({"Na": 32.79, "Al": 13.02, "F": 54.19})
-
-print("\n2. Glucose (40.0% C, 6.71% H, 53.29% O, MM = 180.16 g/mol):")
-solve_empirical_formula({"C": 40.0, "H": 6.71, "O": 53.29}, molar_mass=180.16)
-</code></pre>
-          </details>
-        </div>
-
-        <!-- Tool 4 -->
+                  <!-- Tool 4 -->
         <div id="tool-4" class="tool-card">
           <div class="tool-title">💡 Tool 4: Electromagnetic Radiation Solver</div>
           <div class="tool-desc">Solves between wavelength ($\lambda$), frequency ($
@@ -1727,7 +2194,9 @@ for k, v in res.items():
           </details>
         </div>
 
-        <!-- Tool 5 -->
+
+
+                  <!-- Tool 5 -->
         <div id="tool-5" class="tool-card">
           <div class="tool-title">⚛️ Tool 5: Bohr Hydrogen Transition Calculator</div>
           <div class="tool-desc">Calculates $\Delta E = -R_H(1/n_f^2 - 1/n_i^2)$, emission vs absorption, photon wavelength, and the spectral series.</div>
@@ -1801,7 +2270,9 @@ for k, v in solve_bohr(1, 5).items():
           </details>
         </div>
 
-        <!-- Tool 6 -->
+
+
+                  <!-- Tool 6 -->
         <div id="tool-6" class="tool-card">
           <div class="tool-title">🌊 Tool 6: de Broglie Matter Wavelength Solver</div>
           <div class="tool-desc">Computes the quantum matter wavelength of any moving object or particle via $\lambda = h / (mv)$.</div>
@@ -1850,7 +2321,9 @@ print(" ", de_broglie(9.109e-31, 2.20e6))
           </details>
         </div>
 
-        <!-- Tool 7 -->
+
+
+                  <!-- Tool 7 -->
         <div id="tool-7" class="tool-card">
           <div class="tool-title">🧲 Tool 7: Formal Charge, Bond Polarity & MO Theory Evaluator</div>
           <div class="tool-desc">Evaluates atomic formal charge, bond electronegativity difference ($\Delta EN$), and molecular orbital bond orders/magnetism.</div>
@@ -1944,7 +2417,9 @@ print("  He2 Molecule (2 bonding, 2 antibonding, 0 unpaired):", bond_order_mo(2,
           </details>
         </div>
 
-      </section>
+
+        </section>
+      </div>
 
     </main>
   </div>
@@ -1959,25 +2434,139 @@ print("  He2 Molecule (2 bonding, 2 antibonding, 0 unpaired):", bond_order_mo(2,
       document.getElementById('themeBtn').innerText = next === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode';
     }
 
-    // --- Search Filter ---
+    // --- Unit Tab Switching Engine ---
+    function switchUnitTab(unit) {
+      if (!unit) unit = 'unit1';
+      localStorage.setItem('chem151_active_tab', unit);
+
+      // Update main tab pills
+      document.querySelectorAll('.unit-tab-pill').forEach(btn => {
+        btn.classList.remove('active');
+        btn.setAttribute('aria-selected', 'false');
+      });
+      const activeMainBtn = document.getElementById('tab-btn-' + (unit === 'unit1' ? 'u1' : (unit === 'unit2' ? 'u2' : 'all')));
+      if (activeMainBtn) {
+        activeMainBtn.classList.add('active');
+        activeMainBtn.setAttribute('aria-selected', 'true');
+      }
+
+      // Update sidebar pills
+      document.querySelectorAll('.side-tab-btn').forEach(btn => btn.classList.remove('active'));
+      const activeSideBtn = document.getElementById('side-tab-' + (unit === 'unit1' ? 'u1' : (unit === 'unit2' ? 'u2' : 'all')));
+      if (activeSideBtn) activeSideBtn.classList.add('active');
+
+      // Update containers
+      const u1Cont = document.getElementById('unit1-container');
+      const u2Cont = document.getElementById('unit2-container');
+      const u1Nav = document.getElementById('sidebar-nav-u1');
+      const u2Nav = document.getElementById('sidebar-nav-u2');
+
+      if (unit === 'unit1') {
+        u1Cont.style.display = 'block';
+        u2Cont.style.display = 'none';
+        u1Nav.style.display = 'block';
+        u2Nav.style.display = 'none';
+      } else if (unit === 'unit2') {
+        u1Cont.style.display = 'none';
+        u2Cont.style.display = 'block';
+        u1Nav.style.display = 'none';
+        u2Nav.style.display = 'block';
+      } else { // 'all'
+        u1Cont.style.display = 'block';
+        u2Cont.style.display = 'block';
+        u1Nav.style.display = 'block';
+        u2Nav.style.display = 'block';
+      }
+
+      // Hide search notice on tab switch
+      const notice = document.getElementById('search-tab-notice');
+      if (notice) notice.style.display = 'none';
+
+      // Reprocess MathJax if loaded
+      if (window.MathJax && MathJax.Hub && typeof MathJax.Hub.Queue === 'function') {
+        MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+      }
+    }
+
+    // --- Search Filter with Cross-Tab Support ---
     function handleSearch() {
       const query = document.getElementById('searchInput').value.toLowerCase().trim();
-      const sections = document.querySelectorAll('.content-section');
-      
+      const currentTab = localStorage.getItem('chem151_active_tab') || 'unit1';
+      const u1Cards = document.querySelectorAll('#unit1-container .content-section, #unit1-container .tool-card');
+      const u2Cards = document.querySelectorAll('#unit2-container .content-section, #unit2-container .tool-card');
+      const notice = document.getElementById('search-tab-notice');
+
       if (!query) {
-        sections.forEach(s => s.style.display = 'block');
+        if (notice) notice.style.display = 'none';
+        switchUnitTab(currentTab);
+        u1Cards.forEach(c => c.style.display = 'block');
+        u2Cards.forEach(c => c.style.display = 'block');
         return;
       }
 
-      sections.forEach(s => {
-        const text = s.innerText.toLowerCase();
-        if (text.includes(query)) {
-          s.style.display = 'block';
+      let u1Count = 0;
+      let u2Count = 0;
+
+      u1Cards.forEach(c => {
+        if (c.innerText.toLowerCase().includes(query)) {
+          c.style.display = 'block';
+          u1Count++;
         } else {
-          s.style.display = 'none';
+          c.style.display = 'none';
         }
       });
+
+      u2Cards.forEach(c => {
+        if (c.innerText.toLowerCase().includes(query)) {
+          c.style.display = 'block';
+          u2Count++;
+        } else {
+          c.style.display = 'none';
+        }
+      });
+
+      if (currentTab === 'all') {
+        document.getElementById('unit1-container').style.display = 'block';
+        document.getElementById('unit2-container').style.display = 'block';
+        if (notice) notice.style.display = 'none';
+      } else if (currentTab === 'unit1') {
+        document.getElementById('unit1-container').style.display = 'block';
+        document.getElementById('unit2-container').style.display = 'none';
+        if (notice) {
+          if (u2Count > 0) {
+            notice.style.display = 'flex';
+            notice.innerHTML = `<span>🔍 Found <strong>${u2Count}</strong> matching result(s) in <strong>Unit 2</strong>.</span> <button class="btn-notice-switch" onclick="switchUnitTab('unit2'); handleSearch();">Switch to Unit 2 →</button>`;
+          } else {
+            notice.style.display = 'none';
+          }
+        }
+      } else if (currentTab === 'unit2') {
+        document.getElementById('unit1-container').style.display = 'none';
+        document.getElementById('unit2-container').style.display = 'block';
+        if (notice) {
+          if (u1Count > 0) {
+            notice.style.display = 'flex';
+            notice.innerHTML = `<span>🔍 Found <strong>${u1Count}</strong> matching result(s) in <strong>Unit 1</strong>.</span> <button class="btn-notice-switch" onclick="switchUnitTab('unit1'); handleSearch();">Switch to Unit 1 →</button>`;
+          } else {
+            notice.style.display = 'none';
+          }
+        }
+      }
     }
+
+    // --- Hash Navigation Listener ---
+    function checkHashNavigation() {
+      const hash = window.location.hash;
+      if (!hash) return;
+      if (hash.startsWith('#u2-') || ['#tool-4', '#tool-5', '#tool-6', '#tool-7'].includes(hash)) {
+        switchUnitTab('unit2');
+      } else if (hash.startsWith('#u1-') || ['#tool-1', '#tool-2', '#tool-3'].includes(hash)) {
+        switchUnitTab('unit1');
+      }
+    }
+
+    window.addEventListener('hashchange', checkHashNavigation);
+
 
     // --- Tool 1 ---
     const PFX = {'G': 1e9, 'M': 1e6, 'k': 1e3, 'd': 1e-1, 'c': 1e-2, 'm': 1e-3, 'u': 1e-6, 'n': 1e-9, 'p': 1e-12, '': 1.0};
@@ -2134,8 +2723,7 @@ print("  He2 Molecule (2 bonding, 2 antibonding, 0 unpaired):", bond_order_mo(2,
       const raw = document.getElementById('t3_input').value;
       const mm_target = parseFloat(document.getElementById('t3_mm').value);
       
-      const pairs = raw.split(/[,;
-]+/).map(s => s.trim()).filter(Boolean);
+      const pairs = raw.split(/[,;\n\r]+/).map(s => s.trim()).filter(Boolean);
       const data = {};
       for (const p of pairs) {
         const parts = p.split(/[:=\s]+/).filter(Boolean);
@@ -2383,7 +2971,7 @@ print("  He2 Molecule (2 bonding, 2 antibonding, 0 unpaired):", bond_order_mo(2,
       el.addEventListener('input', updateTool7);
     });
 
-    // Initialize default tool executions
+    // Initialize default tool executions and unit tabs
     window.addEventListener('DOMContentLoaded', () => {
       calcTool1Prefix();
       calcTool1EM();
@@ -2394,7 +2982,13 @@ print("  He2 Molecule (2 bonding, 2 antibonding, 0 unpaired):", bond_order_mo(2,
       calcTool5();
       calcTool6();
       updateTool7();
+
+      // Check saved tab or hash, default to Unit 1
+      const savedTab = localStorage.getItem('chem151_active_tab') || 'unit1';
+      switchUnitTab(savedTab);
+      checkHashNavigation();
     });
   </script>
 </body>
 </html>
+

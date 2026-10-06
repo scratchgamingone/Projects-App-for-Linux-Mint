@@ -30,9 +30,11 @@ Built as an offline GTK WebKit2 application—**no localhost, no web servers, an
 - 🧲 **Tool 7: Formal Charge, Polarity & MOT Evaluator**: Formal charge calculator ($FC = V - N - B$), Pauling electronegativity difference ($\Delta\text{EN}$) bond classifier, and Molecular Orbital Theory bond order/magnetism.
 
 ### 3. Application User Experience
+- **Dedicated Unit Tabs Navigation**: Features a main tab for **Unit 1** (Matter, Foundations & Stoichiometry) and another tab for **Unit 2** (Quantum Structure, Bonding & Geometry), plus an optional **All Units** comprehensive reference view.
+- **Dynamic Sidebar Synchronization**: Switching tabs dynamically updates sidebar modules and calculator links to keep study sessions organized and clutter-free. Tab state is remembered across sessions.
+- **Cross-Tab Smart Search**: Filters definitions, equations, and tools in real time. If search results exist in another unit tab, displays an instant one-click switch notice.
 - **100% Offline & Native**: Runs in a dedicated GTK WebKit2 window using `file://` assets. Zero localhost server.
 - **Local MathJax Engine**: Renders crisp LaTeX chemistry formulas using local system libraries (`/usr/share/javascript/mathjax`).
-- **Real-Time Instant Search**: Quickly filter definitions, formulas, or scientists as you type.
 - **Dark Mode & PDF Export**: One-click dark/light theme switch and print-optimized PDF study sheets.
 
 ---

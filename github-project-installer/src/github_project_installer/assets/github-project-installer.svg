@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="60%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0a0e17"/>
+    </linearGradient>
+
+    <linearGradient id="mintGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="50%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+    
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Squircle Base -->
+  <rect x="24" y="24" width="464" height="464" rx="104" fill="url(#bgGrad)" stroke="#334155" stroke-width="6" filter="url(#shadow)"/>
+  <rect x="34" y="34" width="444" height="444" rx="94" fill="none" stroke="#ffffff" stroke-width="2" stroke-opacity="0.08"/>
+
+  <!-- Folder Backing -->
+  <path d="M 100,165 L 205,165 L 235,195 L 412,195 A 18 18 0 0 1 430,213 L 430,375 A 18 18 0 0 1 412,393 L 100,393 A 18 18 0 0 1 82,375 L 82,183 A 18 18 0 0 1 100,165 Z" fill="#1e293b" stroke="#475569" stroke-width="5"/>
+
+  <!-- GitHub Inverted Mark (White Disc + Dark Octocat) -->
+  <circle cx="256" cy="165" r="72" fill="#ffffff" stroke="#38bdf8" stroke-width="4"/>
+  <g transform="translate(256, 165) scale(0.48)">
+    <path d="M 0,-85 C -55,-85 -100,-40 -100,15 C -100,59 -71,96 -32,109 C -27,110 -25,107 -25,104 L -25,86 C -53,92 -59,72 -59,72 C -63,61 -70,58 -70,58 C -79,52 -69,52 -69,52 C -59,53 -54,62 -54,62 C -45,77 -30,73 -25,70 C -24,63 -21,59 -18,56 C -40,53 -63,44 -63,6 C -63,-5 -59,-14 -52,-21 C -53,-24 -57,-34 -51,-47 C -51,-47 -43,-50 -25,-38 C -17,-40 -9,-41 0,-41 C 9,-41 17,-40 25,-38 C 43,-50 51,-47 51,-47 C 57,-34 53,-24 52,-21 C 59,-14 63,-5 63,6 C 63,44 40,53 18,56 C 22,59 25,65 25,74 L 25,104 C 25,107 27,110 32,109 C 71,96 100,59 100,15 C 100,-40 55,-85 0,-85 Z" fill="#0f172a"/>
+  </g>
+
+  <!-- Big Emerald Download Arrow -->
+  <path d="M 226,260 L 286,260 L 286,335 L 340,335 L 256,415 L 172,335 L 226,335 Z" fill="url(#mintGrad)" stroke="#6ee7b7" stroke-width="4" stroke-linejoin="round"/>
+
+  <!-- Code Bracket Highlights: < > -->
+  <path d="M 150,285 L 115,315 L 150,345" fill="none" stroke="url(#cyanGrad)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 362,285 L 397,315 L 362,345" fill="none" stroke="url(#cyanGrad)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
