@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # ==============================================================================
 # Upload / Sync All Linux Mint Projects to GitHub
-# Target: https://github.com/Your Repo Name
+# Target: https://github.com/scratchgamingone/Projects-App-for-Linux-Mint
 # ==============================================================================
 
 set -eo pipefail
@@ -9,10 +9,15 @@ set -eo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "${SCRIPT_DIR}"
 
-DEFAULT_REPO_NAME="Your Repo Name"
+DEFAULT_REPO_NAME="scratchgamingone/Projects-App-for-Linux-Mint"
 HTTPS_REMOTE_URL="https://github.com/${DEFAULT_REPO_NAME}.git"
 SSH_REMOTE_URL="git@github.com:${DEFAULT_REPO_NAME}.git"
 WEB_URL="https://github.com/${DEFAULT_REPO_NAME}"
+
+INITIAL_REMOTE=$(git remote get-url origin 2>/dev/null || true)
+if [ -n "${INITIAL_REMOTE}" ] && [[ ! "${INITIAL_REMOTE}" =~ [[:space:]] ]] && [[ "${INITIAL_REMOTE}" != *"Your Repo Name"* ]]; then
+    WEB_URL=$(echo "${INITIAL_REMOTE}" | sed -E 's|\.git$||' | sed -E 's|^git@github\.com:|https://github.com/|')
+fi
 
 # Parse optional arguments
 USER_COMMIT_FLAG=""
@@ -151,16 +156,25 @@ CURRENT_REMOTE=$(git remote get-url origin 2>/dev/null || true)
 if [ -z "${CURRENT_REMOTE}" ]; then
     echo -e "${CYAN}🔗 Setting remote 'origin' to: ${HTTPS_REMOTE_URL}${NC}"
     git remote add origin "${HTTPS_REMOTE_URL}"
+elif [[ "${CURRENT_REMOTE}" =~ [[:space:]] || "${CURRENT_REMOTE}" == *"Your Repo Name"* ]]; then
+    echo -e "${YELLOW}⚠️  Detected invalid or malformed remote origin: ${CURRENT_REMOTE}${NC}"
+    echo -e "${CYAN}🔗 Correcting remote 'origin' to: ${HTTPS_REMOTE_URL}${NC}"
+    git remote set-url origin "${HTTPS_REMOTE_URL}"
 elif [ "${CURRENT_REMOTE}" != "${HTTPS_REMOTE_URL}" ] && [ "${CURRENT_REMOTE}" != "${SSH_REMOTE_URL}" ]; then
     echo -e "${YELLOW}Existing remote origin points to: ${CURRENT_REMOTE}${NC}"
     if [ ! -t 0 ]; then
-        CONFIRM_REMOTE="y"
+        if [ "${AUTO_CONFIRM}" = true ]; then
+            git remote set-url origin "${HTTPS_REMOTE_URL}"
+            echo -e "${GREEN}✓ Updated remote origin to ${HTTPS_REMOTE_URL}${NC}"
+        else
+            echo -e "${CYAN}ℹ️ Keeping existing configured remote origin: ${CURRENT_REMOTE}${NC}"
+        fi
     else
-        read -p "Update remote origin to ${HTTPS_REMOTE_URL}? [Y/n]: " CONFIRM_REMOTE || true
-    fi
-    if [[ ! "${CONFIRM_REMOTE}" =~ ^[Nn]$ ]]; then
-        git remote set-url origin "${HTTPS_REMOTE_URL}"
-        echo -e "${GREEN}✓ Updated remote origin to ${HTTPS_REMOTE_URL}${NC}"
+        read -p "Update remote origin to ${HTTPS_REMOTE_URL}? [y/N]: " CONFIRM_REMOTE || true
+        if [[ "${CONFIRM_REMOTE}" =~ ^[Yy]$ ]]; then
+            git remote set-url origin "${HTTPS_REMOTE_URL}"
+            echo -e "${GREEN}✓ Updated remote origin to ${HTTPS_REMOTE_URL}${NC}"
+        fi
     fi
 fi
 
@@ -209,6 +223,7 @@ fi
 
 # 9. Authentication Guidance Banner
 REMOTE_URL=$(git remote get-url origin 2>/dev/null || echo "${HTTPS_REMOTE_URL}")
+WEB_URL=$(echo "${REMOTE_URL}" | sed -E 's|\.git$||' | sed -E 's|^git@github\.com:|https://github.com/|')
 echo -e "\n${CYAN}----------------------------------------------------------------${NC}"
 echo -e "${BOLD}${MAGENTA}🔑 GitHub Authentication Note:${NC}"
 if [[ "${REMOTE_URL}" =~ ^https:// ]]; then
