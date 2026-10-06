@@ -1,0 +1,19 @@
+#!/usr/bin/env python3
+import sys
+import os
+
+# Support running directly from source tree or from /usr/share/mintsweep
+script_dir = os.path.dirname(os.path.realpath(__file__))
+parent_dir = os.path.abspath(os.path.join(script_dir, ".."))
+
+if os.path.exists(os.path.join(parent_dir, "src", "main.py")):
+    # Development directory
+    sys.path.insert(0, parent_dir)
+elif os.path.exists("/usr/share/mintsweep"):
+    # Installed system-wide via .deb package
+    sys.path.insert(0, "/usr/share/mintsweep")
+
+from src.main import main
+
+if __name__ == "__main__":
+    main()

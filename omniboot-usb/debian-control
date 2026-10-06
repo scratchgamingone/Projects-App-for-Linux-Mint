@@ -1,0 +1,22 @@
+Package: omniboot-usb
+Version: 1.0.0
+Section: utils
+Priority: optional
+Architecture: amd64
+Maintainer: Sam <sam@localhost>
+Depends: python3 (>= 3.8), python3-gi, python3-gi-cairo, gir1.2-gtk-3.0, parted, dosfstools, ntfs-3g, p7zip-full, util-linux, udisks2, policykit-1 | polkitd
+Recommends: wimtools
+Description: Multi-ISO & Single OS Bootable USB Creator
+ OmniBoot USB is a native, modern desktop application for creating bootable
+ USB drives for both Linux and Windows.
+ .
+ Features:
+  - First-class Ventoy Multi-ISO support: boot multiple Linux & Windows ISOs
+    from a single USB drive.
+  - Dedicated Single-ISO direct flash for Linux and Windows installers.
+  - Pre-flight storage analysis: compares USB drive capacity against ISO file
+    size and prevents flashing if storage is insufficient.
+  - Safe USB detection that strictly protects internal system drives and OS
+    partitions.
+  - Native GTK3 interface (no localhost / no web server).
+  - PolicyKit (pkexec) integration for safe administrative execution.

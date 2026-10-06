@@ -1,0 +1,16 @@
+services:
+  seerr:
+    image: ghcr.io/seerr-team/seerr:latest
+    # To run classic Jellyseerr instead, you can simply change the image line to:
+    # image: fallenbagel/jellyseerr:latest
+    container_name: seerr
+    environment:
+      - LOG_LEVEL=info
+      - TZ=America/Detroit
+    ports:
+      - "5055:5055"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ./config:/app/config
+    restart: unless-stopped

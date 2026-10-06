@@ -1,0 +1,3 @@
+#!/bin/bash
+export PYTHONPATH="/usr/share/usbguard-manager:${PYTHONPATH}"
+exec /usr/bin/python3 /usr/share/usbguard-manager/main.py "$@"

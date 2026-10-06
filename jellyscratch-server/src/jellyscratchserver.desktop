@@ -1,0 +1,16 @@
+[Desktop Entry]
+Name=JellyScratch Server
+GenericName=Media Server & Player
+Comment=Jellyfin Media Server with Live Discord Playback Monitor
+Exec=jellyscratchserver
+Icon=jellyscratchserver
+Terminal=false
+Type=Application
+Categories=Projects;AudioVideo;Video;Player;Network;
+Keywords=jellyfin;media;server;player;discord;stream;movies;
+StartupWMClass=jellyscratchserver
+Actions=ConfigureDiscord;
+
+[Desktop Action ConfigureDiscord]
+Name=Configure Discord Webhook
+Exec=jellyscratchserver --configure

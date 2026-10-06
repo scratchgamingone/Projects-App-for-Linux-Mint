@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=MintStatLab
+GenericName=System Statistical Telemetry Lab
+Comment=Linux Mint Statistical Performance, Heavy-Tail Modeling & Anomaly Lab
+Exec=mintstatlab
+Icon=mintstatlab
+Terminal=false
+Type=Application
+Categories=Projects;System;Math;Science;Monitor;Utility;
+Keywords=statistics;telemetry;gini;lorenz;survival;poisson;drift;memory;processes;
+StartupNotify=true
+StartupWMClass=mintstatlab

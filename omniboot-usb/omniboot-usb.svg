@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="usbBody" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="metalPlug" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#cbd5e1"/>
+      <stop offset="50%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#94a3b8"/>
+    </linearGradient>
+    <linearGradient id="accentGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="isoDisc" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ec4899"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- USB Metal Connector -->
+  <rect x="48" y="10" width="32" height="28" rx="2" fill="url(#metalPlug)" stroke="#64748b" stroke-width="2"/>
+  <rect x="54" y="16" width="6" height="8" rx="1" fill="#334155"/>
+  <rect x="68" y="16" width="6" height="8" rx="1" fill="#334155"/>
+
+  <!-- USB Main Body -->
+  <rect x="36" y="34" width="56" height="74" rx="12" fill="url(#usbBody)" stroke="#334155" stroke-width="2"/>
+  
+  <!-- USB Grip Accent -->
+  <rect x="42" y="40" width="44" height="6" rx="3" fill="#334155"/>
+  
+  <!-- Ventoy Multi-Disc / Lightning Boot Symbol -->
+  <!-- Disc Graphic -->
+  <circle cx="64" cy="74" r="22" fill="url(#isoDisc)" opacity="0.9"/>
+  <circle cx="64" cy="74" r="16" fill="none" stroke="#fdf2f8" stroke-width="1.5" stroke-dasharray="3 3"/>
+  <circle cx="64" cy="74" r="7" fill="#0f172a" stroke="#fbcfe8" stroke-width="1.5"/>
+
+  <!-- Lightning Bolt (Fast Boot/Flash) -->
+  <polygon points="66,54 53,74 63,74 61,92 75,70 65,70" fill="#facc15" stroke="#ca8a04" stroke-width="1.5"/>
+
+  <!-- Activity LED -->
+  <circle cx="64" cy="100" r="3" fill="#10b981"/>
+</svg>

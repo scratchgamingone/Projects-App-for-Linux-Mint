@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=OmniBoot USB
+GenericName=Bootable USB Flasher
+Comment=Create bootable USB drives with Ventoy multi-ISO or direct OS flashing
+Exec=omniboot-usb
+Icon=omniboot-usb
+Terminal=false
+Type=Application
+Categories=Projects;System;Utility;Archiving;
+Keywords=usb;flash;iso;ventoy;windows;linux;boot;
+StartupNotify=true

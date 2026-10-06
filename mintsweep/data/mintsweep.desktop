@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=MintSweep
+Comment=Clean package caches, logs, and free disk space
+Exec=/usr/bin/mintsweep
+Icon=mintsweep
+Terminal=false
+Type=Application
+Categories=GNOME;GTK;System;Utility;Settings;
+Keywords=clean;cache;trash;disk;apt;free;space;
+StartupNotify=true

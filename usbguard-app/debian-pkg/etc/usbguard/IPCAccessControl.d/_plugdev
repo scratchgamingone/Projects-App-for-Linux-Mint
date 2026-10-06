@@ -1,0 +1,4 @@
+Devices=modify,list,listen
+Policy=modify,list
+Exceptions=listen
+Parameters=modify,list

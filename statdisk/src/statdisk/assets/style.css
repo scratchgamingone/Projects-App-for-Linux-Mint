@@ -1,0 +1,50 @@
+/* StatDisk Modern Dark/Light Theme Enhancements */
+
+/* Breadcrumb navigation bar */
+.breadcrumb-btn {
+    border-radius: 6px;
+    padding: 3px 8px;
+    font-size: 12px;
+    font-weight: 500;
+    transition: all 150ms ease-in-out;
+}
+
+.breadcrumb-btn:hover {
+    background-color: alpha(@theme_selected_bg_color, 0.2);
+}
+
+.breadcrumb-active {
+    font-weight: bold;
+    color: @theme_selected_bg_color;
+}
+
+.breadcrumb-sep {
+    color: #64748b;
+    font-size: 13px;
+    margin: 0 1px;
+}
+
+/* Stat Cards in Statistics Panel */
+.stat-card {
+    background-color: alpha(@theme_base_color, 0.95);
+    border: 1px solid alpha(#64748b, 0.25);
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+/* App Statusbar */
+.app-statusbar {
+    border-top: 1px solid alpha(#64748b, 0.2);
+    font-size: 11px;
+    color: #94a3b8;
+}
+
+/* TreeView cell styling */
+treeview {
+    font-size: 12px;
+}
+
+treeview:selected {
+    background-color: @theme_selected_bg_color;
+    color: @theme_selected_fg_color;
+}

@@ -1,0 +1,39 @@
+services:
+  zurg:
+    image: ghcr.io/debridmediamanager/zurg-testing:latest
+    container_name: zurg
+    restart: unless-stopped
+    volumes:
+      - ./config.yml:/app/config.yml
+      - ./data:/app/data
+    ports:
+      - "9999:9999"
+
+  rclone:
+    image: rclone/rclone:latest
+    container_name: rclone-debrid
+    restart: unless-stopped
+    depends_on:
+      - zurg
+    environment:
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - ./rclone.conf:/config/rclone/rclone.conf
+      - "/home/sam/Jellyfin Server Media/DebridCloud:/data:shared"
+    cap_add:
+      - SYS_ADMIN
+    devices:
+      - /dev/fuse
+    security_opt:
+      - apparmor:unconfined
+    command: >
+      mount zurg: /data
+      --allow-other
+      --allow-non-empty
+      --dir-cache-time 10s
+      --vfs-cache-mode full
+      --vfs-cache-max-size 10G
+      --vfs-read-chunk-size 32M
+      --vfs-read-chunk-size-limit 256M
+      --buffer-size 64M

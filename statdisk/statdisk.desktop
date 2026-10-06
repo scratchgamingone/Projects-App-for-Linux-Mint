@@ -1,0 +1,19 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=StatDisk
+GenericName=Disk Space & Statistical Analyzer
+Comment=Interactive storage visualizer with advanced statistical modeling, heavy-tail distributions, and inequality metrics
+Exec=statdisk %U
+Icon=statdisk
+Terminal=false
+Categories=Projects;Utility;System;FileTools;Science;Math;
+Keywords=disk;storage;usage;space;analyzer;squirreldisk;statistics;distribution;outliers;lorenz;gini;pareto;
+StartupNotify=true
+StartupWMClass=io.github.statdisk.analyzer
+MimeType=inode/directory;
+Actions=ScanHome;
+
+[Desktop Action ScanHome]
+Name=Scan Home Directory
+Exec=statdisk

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb" />
+      <stop offset="100%" stop-color="#1e40af" />
+    </linearGradient>
+    <linearGradient id="usbGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#e2e8f0" />
+    </linearGradient>
+    <filter id="dropShadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  <!-- Outer Shield -->
+  <path d="M 64,8 C 88,8 112,18 112,42 C 112,86 64,118 64,118 C 64,118 16,86 16,42 C 16,18 40,8 64,8 Z"
+        fill="url(#shieldGrad)" filter="url(#dropShadow)" />
+  <!-- Inner Highlight -->
+  <path d="M 64,14 C 84,14 105,23 105,43 C 105,82 64,111 64,111 C 64,111 23,82 23,43 C 23,23 44,14 64,14 Z"
+        fill="none" stroke="#60a5fa" stroke-width="2" opacity="0.6" />
+  <!-- USB Trunk -->
+  <line x1="64" y1="38" x2="64" y2="88" stroke="url(#usbGrad)" stroke-width="5" stroke-linecap="round" />
+  <!-- Top Arrow -->
+  <polygon points="64,28 54,42 74,42" fill="#ffffff" />
+  <!-- Center circle at base -->
+  <circle cx="64" cy="88" r="7" fill="#ffffff" />
+  <!-- Right branch to square -->
+  <path d="M 64,68 C 76,68 84,62 84,52 L 84,46" fill="none" stroke="url(#usbGrad)" stroke-width="4" stroke-linecap="round" />
+  <rect x="78" y="38" width="12" height="12" rx="2" fill="#38bdf8" />
+  <!-- Left branch to circle -->
+  <path d="M 64,60 C 52,60 44,66 44,74 L 44,80" fill="none" stroke="url(#usbGrad)" stroke-width="4" stroke-linecap="round" />
+  <circle cx="44" cy="82" r="5.5" fill="#4ade80" />
+</svg>

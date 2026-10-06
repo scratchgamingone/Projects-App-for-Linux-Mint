@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0284c7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2563eb;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="liquid" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#38bdf8;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#0284c7;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Outer Rounded Badge -->
+  <rect x="4" y="4" width="120" height="120" rx="28" fill="url(#grad1)" />
+
+  <!-- Flask Body -->
+  <path d="M54 28 L74 28 L74 46 L98 94 A8 8 0 0 1 91 106 L37 106 A8 8 0 0 1 30 94 L54 46 Z" 
+        fill="#ffffff" opacity="0.95" />
+  
+  <!-- Liquid Inside Flask -->
+  <path d="M43 78 L85 78 L93 94 A6 6 0 0 1 88 102 L40 102 A6 6 0 0 1 35 94 Z" 
+        fill="url(#liquid)" />
+  
+  <!-- Bubbles -->
+  <circle cx="58" cy="88" r="3.5" fill="#ffffff" opacity="0.8" />
+  <circle cx="70" cy="84" r="2.5" fill="#ffffff" opacity="0.8" />
+  <circle cx="64" cy="94" r="2" fill="#ffffff" opacity="0.8" />
+
+  <!-- Electron Orbit Ring -->
+  <ellipse cx="64" cy="64" rx="46" ry="18" fill="none" stroke="#facc15" stroke-width="3" stroke-dasharray="8 4" transform="rotate(-25 64 64)" />
+  <circle cx="28" cy="48" r="4.5" fill="#facc15" />
+</svg>

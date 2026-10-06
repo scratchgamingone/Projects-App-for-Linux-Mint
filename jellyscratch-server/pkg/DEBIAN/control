@@ -1,0 +1,11 @@
+Package: jellyscratchserver
+Version: 1.0.0
+Section: video
+Priority: optional
+Architecture: amd64
+Maintainer: Sam <sam@local>
+Depends: python3, python3-gi, gir1.2-gtk-3.0, gir1.2-webkit2-4.1, python3-requests, curl, ca-certificates, jellyfin
+Description: JellyScratch Server - Standalone Jellyfin Media Server & Discord Live Monitor
+ All-in-one desktop application for Jellyfin Media Server with an embedded
+ native player window, auto-starting server, and a Discord Webhook monitor
+ that posts and live-updates (every 30 seconds) active movie playback stats.

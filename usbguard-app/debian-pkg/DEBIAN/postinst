@@ -1,0 +1,70 @@
+#!/bin/bash
+set -e
+
+CONF="/etc/usbguard/usbguard-daemon.conf"
+RULES="/etc/usbguard/rules.conf"
+IPC_DIR="/etc/usbguard/IPCAccessControl.d"
+
+update_conf_key() {
+    local key="$1"
+    local val="$2"
+    if [ ! -f "$CONF" ]; then
+        mkdir -p /etc/usbguard
+        touch "$CONF"
+    fi
+    if grep -q "^[# ]*${key}=" "$CONF"; then
+        sed -i "s|^[# ]*${key}=.*|${key}=${val}|" "$CONF"
+    else
+        echo "${key}=${val}" >> "$CONF"
+    fi
+}
+
+case "$1" in
+    configure)
+        mkdir -p /etc/usbguard "$IPC_DIR"
+
+        # 1. Enforce default-block policy for new plugged-in USBs
+        update_conf_key "ImplicitPolicyTarget" "block"
+        update_conf_key "PresentDevicePolicy" "apply-policy"
+        update_conf_key "InsertedDevicePolicy" "apply-policy"
+
+        # 2. Baseline policy: If rules.conf does not exist or is empty,
+        # generate rules for currently connected devices so user's keyboard/mouse are not blocked!
+        if [ ! -s "$RULES" ]; then
+            if command -v usbguard >/dev/null 2>&1; then
+                echo "Generating initial baseline policy for currently connected USB devices..."
+                usbguard generate-policy >> "$RULES" || true
+            fi
+        fi
+
+        # 3. Permissions on configuration and IPC control files
+        [ -f "$RULES" ] && chmod 600 "$RULES" || true
+        [ -f "$CONF" ] && chmod 600 "$CONF" || true
+        chmod 600 "$IPC_DIR"/* 2>/dev/null || true
+
+        # 4. Enable and start USBGuard service
+        if [ -d /run/systemd/system ]; then
+            systemctl daemon-reload >/dev/null 2>&1 || true
+            systemctl enable usbguard.service >/dev/null 2>&1 || true
+            systemctl restart usbguard.service >/dev/null 2>&1 || true
+        fi
+
+        # 5. Update desktop caches
+        if command -v update-desktop-database >/dev/null 2>&1; then
+            update-desktop-database -q /usr/share/applications || true
+        fi
+        if command -v gtk-update-icon-cache >/dev/null 2>&1; then
+            gtk-update-icon-cache -q -t -f /usr/share/icons/hicolor || true
+        fi
+        ;;
+
+    abort-upgrade|abort-remove|abort-deconfigure)
+        exit 0
+        ;;
+
+    *)
+        exit 0
+        ;;
+esac
+
+exit 0

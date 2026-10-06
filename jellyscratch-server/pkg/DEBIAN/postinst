@@ -1,0 +1,37 @@
+#!/bin/bash
+set -e
+
+chmod +x /opt/jellyscratchserver/app.py 2>/dev/null || true
+chmod +x /opt/jellyscratchserver/monitor.py 2>/dev/null || true
+chmod +x /usr/bin/jellyscratchserver 2>/dev/null || true
+
+# Update desktop icon & application databases
+if command -v update-desktop-database >/dev/null 2>&1; then
+    update-desktop-database -q || true
+fi
+
+if command -v gtk-update-icon-cache >/dev/null 2>&1; then
+    gtk-update-icon-cache -q -t -f /usr/share/icons/hicolor || true
+fi
+
+# Enable and start Jellyfin service
+if command -v systemctl >/dev/null 2>&1; then
+    systemctl daemon-reload || true
+    systemctl enable jellyfin || true
+    systemctl start jellyfin || true
+fi
+
+# Configure UFW if enabled
+if command -v ufw >/dev/null 2>&1; then
+    if ufw status 2>/dev/null | grep -qw "active"; then
+        ufw allow 8096/tcp comment 'JellyScratch Jellyfin Server' || true
+    fi
+fi
+
+echo "=========================================================="
+echo "  ✔ JellyScratch Server installed successfully!           "
+echo "  Launch it from your App Menu or by running:             "
+echo "      jellyscratchserver                                  "
+echo "=========================================================="
+
+exit 0

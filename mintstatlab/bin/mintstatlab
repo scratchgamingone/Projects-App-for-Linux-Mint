@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# MintStatLab Desktop Launcher
+
+# Determine root installation or local source directory
+REAL_PATH="$(readlink -f "${BASH_SOURCE[0]}")"
+DIR="$(dirname "$REAL_PATH")"
+
+if [ -f "${DIR}/../src/app.py" ]; then
+    APP_SCRIPT="${DIR}/../src/app.py"
+elif [ -f "/usr/share/mintstatlab/src/app.py" ]; then
+    APP_SCRIPT="/usr/share/mintstatlab/src/app.py"
+elif [ -f "$HOME/Projects/mintstatlab/src/app.py" ]; then
+    APP_SCRIPT="$HOME/Projects/mintstatlab/src/app.py"
+else
+    echo "Error: Cannot locate MintStatLab app.py"
+    exit 1
+fi
+
+exec /usr/bin/python3 "$APP_SCRIPT" "$@"

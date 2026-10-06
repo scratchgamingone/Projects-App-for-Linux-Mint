@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="mintGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#87cf3e"/>
+      <stop offset="100%" stop-color="#559922"/>
+    </linearGradient>
+    <filter id="dropShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Background rounded squircle -->
+  <rect x="12" y="12" width="104" height="104" rx="26" fill="url(#mintGrad)" filter="url(#dropShadow)" />
+
+  <!-- Clean inner circle -->
+  <circle cx="64" cy="64" r="42" fill="#ffffff" opacity="0.15"/>
+
+  <!-- Broom / Sweep Stylized Icon -->
+  <!-- Broom Handle -->
+  <path d="M78 30 L94 46 L58 82 L42 66 Z" fill="#ffffff" opacity="0.95"/>
+  <rect x="80" y="32" width="16" height="4" transform="rotate(45 80 32)" fill="#333333" opacity="0.2"/>
+
+  <!-- Broom Bristles -->
+  <path d="M42 66 L58 82 L46 98 C36 102, 26 92, 30 82 Z" fill="#f8e71c" stroke="#ffffff" stroke-width="2"/>
+  <line x1="38" y1="78" x2="48" y2="88" stroke="#d4b106" stroke-width="2" stroke-linecap="round"/>
+  <line x1="34" y1="84" x2="44" y2="94" stroke="#d4b106" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Sparkles -->
+  <path d="M78 68 Q84 68 84 62 Q84 68 90 68 Q84 68 84 74 Q84 68 78 68 Z" fill="#ffffff"/>
+  <path d="M88 44 Q92 44 92 40 Q92 44 96 44 Q92 44 92 48 Q92 44 88 44 Z" fill="#ffffff"/>
+  <path d="M36 40 Q40 40 40 36 Q40 40 44 40 Q40 40 40 44 Q40 40 36 40 Z" fill="#ffffff"/>
+</svg>

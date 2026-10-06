@@ -1,0 +1,7 @@
+#!/bin/bash
+set -e
+
+# Stop any running instances of jellyscratchserver
+pkill -f jellyscratchserver 2>/dev/null || true
+
+exit 0

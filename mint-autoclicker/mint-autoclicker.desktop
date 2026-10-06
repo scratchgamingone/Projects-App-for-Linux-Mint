@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Mint Auto Clicker
+GenericName=Auto Clicker
+Comment=Fast customizable auto clicker for games, clicking simulators, and repetitive tasks
+Exec=/usr/bin/mint-autoclicker
+Icon=mint-autoclicker
+Terminal=false
+Categories=Projects;Utility;Game;
+Keywords=autoclicker;clicker;gaming;simulator;mouse;roblox;automation;
+StartupNotify=true
+StartupWMClass=mint-autoclicker

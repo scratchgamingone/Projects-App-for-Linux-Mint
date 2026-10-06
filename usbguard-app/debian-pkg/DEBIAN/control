@@ -1,0 +1,15 @@
+Package: usbguard-manager
+Version: 1.0.0
+Architecture: all
+Maintainer: Antigravity Assistant <support@example.com>
+Installed-Size: 120
+Depends: usbguard, python3 (>= 3.8), python3-gi, gir1.2-gtk-3.0, gir1.2-notify-0.7, libnotify-bin, pkexec
+Recommends: usbguard-notifier
+Section: utils
+Priority: optional
+Homepage: https://usbguard.github.io/
+Description: USB Guard - USB device authorization and BadUSB protection manager
+ A graphical management tool and background monitor for USBGuard.
+ Blocks newly plugged-in USB devices by default to protect against BadUSB
+ and malicious hardware, while allowing users to easily trust, authorize,
+ and whitelist legitimate USB devices with one click.

@@ -1,0 +1,57 @@
+# ==============================================================================
+# Omni Projects Git Ignore Rules
+# ==============================================================================
+
+# Byte-compiled / optimized / Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Virtual Environments
+.env/
+.venv/
+env/
+venv/
+ENV/
+*.env/
+*venv/
+.stremio_env/
+**/.*_env/
+**/*_env/
+
+# Build packaging & staging artifacts
+**/build/
+omniboot-usb/pkg/
+*.tmp
+*.bak
+*.swp
+*~
+
+# Backups of nested git metadata
+**/.git_backup/
+**/.git_backup
+
+# Sensitive tokens, secrets, and private credentials
+debrid/config.yml
+seerr/config/settings.json
+seerr/config/settings.old.json
+*.env
+*.env.*
+*.pem
+*.key
+
+# Runtime database, cache, and logs
+seerr/config/db/
+seerr/config/cache/
+seerr/config/logs/
+*.log
+debrid/data/network_test_results.json
+debrid/data/network_test_timestamp
+
+# OS & Desktop metadata
+.DS_Store
+Thumbs.db

@@ -1,0 +1,1 @@
+install_or_update_all_projects.sh

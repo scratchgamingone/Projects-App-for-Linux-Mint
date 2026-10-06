@@ -1,0 +1,19 @@
+{
+  "jellyfin_url": "http://localhost:8096",
+  "jellyfin_api_key": "YOUR_JELLYFIN_API_KEY_HERE",
+  "discord_webhook_url": "YOUR_DISCORD_WEBHOOK_URL_HERE",
+  "discord_webhook_all": "",
+  "discord_new_media_webhook_url": "",
+  "discord_webhook_movies": "",
+  "discord_webhook_series": "",
+  "discord_webhook_episodes": "",
+  "discord_webhook_music": "",
+  "discord_webhook_music_videos": "",
+  "discord_webhook_videos": "",
+  "update_interval_seconds": 30,
+  "user_filter": null,
+  "delete_on_stop": false,
+  "include_poster": true,
+  "notify_new_movies": true,
+  "notify_new_media": true
+}

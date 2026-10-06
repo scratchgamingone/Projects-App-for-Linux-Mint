@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a1b26"/>
+      <stop offset="100%" stop-color="#16161e"/>
+    </linearGradient>
+    <linearGradient id="curveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#73daca"/>
+      <stop offset="50%" stop-color="#7dcfff"/>
+      <stop offset="100%" stop-color="#bb9af7"/>
+    </linearGradient>
+    <linearGradient id="barGrad1" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#199ca8"/>
+      <stop offset="100%" stop-color="#73daca"/>
+    </linearGradient>
+    <linearGradient id="barGrad2" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#0c75de"/>
+      <stop offset="100%" stop-color="#7dcfff"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Base Rounded Container -->
+  <rect x="16" y="16" width="224" height="224" rx="48" fill="url(#bgGrad)" stroke="#292e42" stroke-width="4"/>
+
+  <!-- Statistical Grid Lines -->
+  <line x1="48" y1="184" x2="208" y2="184" stroke="#292e42" stroke-width="2" stroke-dasharray="4 4"/>
+  <line x1="48" y1="140" x2="208" y2="140" stroke="#292e42" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <line x1="48" y1="96" x2="208" y2="96" stroke="#292e42" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <line x1="128" y1="60" x2="128" y2="192" stroke="#292e42" stroke-width="1.5" stroke-dasharray="4 4"/>
+
+  <!-- Histogram Bars -->
+  <rect x="56" y="152" width="22" height="32" rx="4" fill="url(#barGrad1)" opacity="0.6"/>
+  <rect x="84" y="120" width="22" height="64" rx="4" fill="url(#barGrad1)" opacity="0.75"/>
+  <rect x="112" y="80" width="22" height="104" rx="4" fill="url(#barGrad2)" opacity="0.85"/>
+  <rect x="140" y="108" width="22" height="76" rx="4" fill="url(#barGrad2)" opacity="0.75"/>
+  <rect x="168" y="144" width="22" height="40" rx="4" fill="url(#barGrad1)" opacity="0.6"/>
+
+  <!-- Gaussian Bell Curve (Normal Distribution) -->
+  <path d="M 44,180 C 70,180 88,172 104,136 C 116,108 120,68 128,68 C 136,68 140,108 152,136 C 168,172 186,180 212,180"
+        fill="none" stroke="url(#curveGrad)" stroke-width="6" stroke-linecap="round" filter="url(#glow)"/>
+
+  <!-- Baseline Axis -->
+  <line x1="40" y1="184" x2="216" y2="184" stroke="#7dcfff" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Peak Mode Marker -->
+  <circle cx="128" cy="68" r="5" fill="#f7768e"/>
+
+  <!-- Linux Mint Stylized Accent Leaf -->
+  <path d="M 180,48 C 196,44 208,54 208,68 C 208,82 196,92 182,92 C 178,76 174,60 180,48 Z"
+        fill="#73daca" opacity="0.85"/>
+  <path d="M 180,48 C 188,64 192,76 208,80" stroke="#16161e" stroke-width="2" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=USB Guard
+GenericName=USB Protection Manager
+Comment=Block untrusted USB devices and manage trusted whitelist
+Exec=/usr/bin/usbguard-manager
+Icon=usbguard-manager
+Terminal=false
+Type=Application
+Categories=System;Security;Settings;GTK;
+Keywords=usb;guard;security;block;allow;trusted;firewall;badusb;
+StartupNotify=true

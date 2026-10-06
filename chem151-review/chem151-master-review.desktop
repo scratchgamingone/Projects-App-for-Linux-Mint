@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=CHEM 151 Master Review
+GenericName=Chemistry Study & Calculator Suite
+Comment=General Chemistry Unit 1 & Unit 2 Master Study Suite, definitions, and 7 offline interactive calculators
+Exec=chem151-master-review %U
+Icon=chem151-master-review
+Terminal=false
+Categories=Projects;Education;Science;Chemistry;Math;
+Keywords=chemistry;chem151;stoichiometry;vsepr;bohr;formulas;lewis;debroglie;radiation;
+StartupNotify=true
+StartupWMClass=chem151-master-review

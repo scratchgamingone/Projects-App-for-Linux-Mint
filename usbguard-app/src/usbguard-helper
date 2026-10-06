@@ -1,0 +1,83 @@
+#!/bin/bash
+# Helper script for privileged operations executed via pkexec
+set -e
+
+ACTION="$1"
+CONF="/etc/usbguard/usbguard-daemon.conf"
+RULES="/etc/usbguard/rules.conf"
+IPC_DIR="/etc/usbguard/IPCAccessControl.d"
+
+update_conf_key() {
+    local key="$1"
+    local val="$2"
+    if [ ! -f "$CONF" ]; then
+        touch "$CONF"
+    fi
+    if grep -q "^[# ]*${key}=" "$CONF"; then
+        sed -i "s|^[# ]*${key}=.*|${key}=${val}|" "$CONF"
+    else
+        echo "${key}=${val}" >> "$CONF"
+    fi
+}
+
+case "$ACTION" in
+    set-policy)
+        TARGET="$2"
+        if [ "$TARGET" != "block" ] && [ "$TARGET" != "allow" ]; then
+            echo "Invalid target: $TARGET" >&2
+            exit 1
+        fi
+        update_conf_key "ImplicitPolicyTarget" "$TARGET"
+        update_conf_key "PresentDevicePolicy" "apply-policy"
+        update_conf_key "InsertedDevicePolicy" "apply-policy"
+        systemctl restart usbguard || true
+        echo "Default policy successfully set to: $TARGET"
+        ;;
+
+    restart)
+        systemctl restart usbguard
+        echo "USBGuard service restarted successfully."
+        ;;
+
+    start)
+        systemctl start usbguard
+        echo "USBGuard service started successfully."
+        ;;
+
+    setup-permissions)
+        mkdir -p "$IPC_DIR"
+        cat << 'EOF' > "$IPC_DIR/:plugdev"
+Devices=modify,list,listen
+Policy=modify,list
+Exceptions=listen
+Parameters=modify,list
+EOF
+        cat << 'EOF' > "$IPC_DIR/:sudo"
+Devices=modify,list,listen
+Policy=modify,list
+Exceptions=listen
+Parameters=modify,list
+EOF
+        chmod 600 "$IPC_DIR/:plugdev" "$IPC_DIR/:sudo"
+        systemctl restart usbguard || true
+        echo "IPC permissions for plugdev and sudo configured successfully."
+        ;;
+
+    trust-all-current)
+        mkdir -p /etc/usbguard
+        if command -v usbguard >/dev/null 2>&1; then
+            usbguard generate-policy >> "$RULES"
+            chmod 600 "$RULES"
+            systemctl restart usbguard || true
+            echo "Generated and trusted baseline policy for currently connected USB devices."
+        else
+            echo "usbguard binary not found." >&2
+            exit 1
+        fi
+        ;;
+
+    *)
+        echo "Usage: $0 {set-policy block|allow | restart | start | setup-permissions | trust-all-current}" >&2
+        exit 1
+        ;;
+esac

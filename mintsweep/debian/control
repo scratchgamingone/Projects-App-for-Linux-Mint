@@ -1,0 +1,12 @@
+Package: mintsweep
+Version: 1.0.0
+Section: utils
+Priority: optional
+Architecture: all
+Maintainer: Sam <sam@local>
+Depends: python3 (>= 3.8), python3-gi, gir1.2-gtk-3.0
+Recommends: policykit-1 | pkexec
+Description: System and Cache Cleaner for Linux Mint
+ MintSweep is a native GTK3 desktop utility designed for Linux Mint to scan
+ and clean APT package caches, thumbnail stores, old system journals,
+ and user trash to reclaim disk space safely.

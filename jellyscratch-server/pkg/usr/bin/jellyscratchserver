@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Wrapper launcher for JellyScratch Server
+exec /usr/bin/python3 /opt/jellyscratchserver/app.py "$@"

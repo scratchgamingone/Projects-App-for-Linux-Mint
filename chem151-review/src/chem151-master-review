@@ -1,0 +1,98 @@
+#!/usr/bin/env python3
+"""
+CHEM 151 Master Review Desktop Application Launcher
+Runs as a native GTK WebKit2 desktop window - zero localhost, zero network dependencies.
+"""
+import sys
+import os
+
+def launch_webkit(html_path, icon_path):
+    import gi
+    try:
+        gi.require_version('Gtk', '3.0')
+        gi.require_version('WebKit2', '4.1')
+    except (ValueError, AttributeError):
+        try:
+            gi.require_version('WebKit2', '4.0')
+        except Exception:
+            return False
+
+    from gi.repository import Gtk, WebKit2
+
+    if not Gtk.init_check():
+        return False
+
+    class Chem151Window(Gtk.Window):
+        def __init__(self, page_path, icn_path):
+            super().__init__(title="CHEM 151: Unit 1 & Unit 2 Master Review")
+            self.set_default_size(1260, 840)
+            self.set_position(Gtk.WindowPosition.CENTER)
+
+            if icn_path and os.path.exists(icn_path):
+                try:
+                    self.set_icon_from_file(icn_path)
+                except Exception:
+                    pass
+
+            settings = WebKit2.Settings()
+            settings.set_enable_developer_extras(False)
+            settings.set_allow_file_access_from_file_urls(True)
+            settings.set_allow_universal_access_from_file_urls(True)
+            settings.set_enable_javascript(True)
+
+            self.webview = WebKit2.WebView.new_with_settings(settings)
+            self.webview.load_uri("file://" + os.path.abspath(page_path))
+
+            scroller = Gtk.ScrolledWindow()
+            scroller.add(self.webview)
+            self.add(scroller)
+            self.connect("destroy", Gtk.main_quit)
+
+    win = Chem151Window(html_path, icon_path)
+    win.show_all()
+    Gtk.main()
+    return True
+
+def main():
+    candidate_html = [
+        "/usr/share/chem151-master-review/app.html",
+        os.path.join(os.path.dirname(os.path.abspath(__file__)), "app.html"),
+        os.path.expanduser("~/.local/share/chem151-master-review/app.html"),
+        "/home/sam/Documents/LCC/CHEM 151/Unit 2/chem151-desktop-app/app.html"
+    ]
+    html_file = None
+    for c in candidate_html:
+        if os.path.exists(c):
+            html_file = c
+            break
+
+    if not html_file:
+        print("Error: Could not locate app.html.")
+        sys.exit(1)
+
+    candidate_icons = [
+        "/usr/share/icons/hicolor/scalable/apps/chem151-master-review.svg",
+        os.path.join(os.path.dirname(os.path.abspath(__file__)), "chem151-master-review.svg"),
+        os.path.expanduser("~/.local/share/icons/hicolor/scalable/apps/chem151-master-review.svg"),
+        "/home/sam/Documents/LCC/CHEM 151/Unit 2/chem151-desktop-app/chem151-master-review.svg"
+    ]
+    icon_file = None
+    for ic in candidate_icons:
+        if os.path.exists(ic):
+            icon_file = ic
+            break
+
+    # Attempt native WebKit GTK desktop window
+    if os.environ.get('DISPLAY') or os.environ.get('WAYLAND_DISPLAY'):
+        try:
+            if launch_webkit(html_file, icon_file):
+                return
+        except Exception as e:
+            print(f"WebKit GTK launch failed: {e}. Falling back to default viewer...")
+
+    # Fallback to xdg-open
+    import subprocess
+    subprocess.run(["xdg-open", html_file])
+
+if __name__ == '__main__':
+    main()
