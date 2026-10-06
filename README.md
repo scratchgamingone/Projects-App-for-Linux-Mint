@@ -88,6 +88,7 @@ Your custom applications are grouped under a dedicated **Projects** category in 
 | **[Stremio Dashboard](./stremio-dashboard)** | Web interface for managing Real-Debrid API keys, Discord webhooks, and stream quality settings. | `stremio-dashboard` |
 | **[Seerr (Jellyseerr)](./seerr)** | Docker-based media request and discovery service for Jellyfin. | `seerr` |
 | **[Debrid Cloud](./debrid)** | Docker-based Zurg Real-Debrid mount and Rclone caching service for Jellyfin media storage. | `debrid` |
+| **[Mint Script Runner](./mint-script-runner)** | Drag & Drop .sh shell script runner with root elevation (pkexec) & GitHub credential integration. | `mint-script-runner` |
 | **[System Scripts](./system-scripts)** | Linux Mint maintenance utilities (audio fixes, face unlock camera configuration, Jellyfin setup). | `fix-speaker` |
 
 ---

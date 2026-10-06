@@ -1,0 +1,14 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Mint Script Runner
+GenericName=Shell Script Executor
+Comment=Drag-and-drop .sh script runner with root elevation and GitHub credentials integration
+Exec=/usr/bin/mint-script-runner %f
+Icon=mint-script-runner
+Terminal=false
+Categories=Projects;Utility;System;Development;
+Keywords=script;runner;shell;bash;sh;terminal;admin;pkexec;github;git;
+MimeType=application/x-shellscript;text/x-shellscript;
+StartupNotify=true
+StartupWMClass=mint-script-runner

@@ -132,6 +132,17 @@ PROJECT_REGISTRY = {
         ],
         "binaries": ["usbguard", "notify-send", "pkexec"],
     },
+    "mint-script-runner": {
+        "name": "Mint Script Runner",
+        "description": "Drag & Drop .sh Script Runner with Root Elevation & GitHub Credentials Integration",
+        "apt_packages": [
+            "python3",
+            "python3-gi",
+            "gir1.2-gtk-3.0",
+            "pkexec",
+        ],
+        "binaries": ["pkexec"],
+    },
     "roblox-caffeine": {
         "name": "Roblox Caffeine",
         "description": "Linux Gamepad /dev/uinput AFK Kick Preventer",
@@ -705,7 +716,54 @@ Categories=Projects;Network;AudioVideo;
         installed_summary.append("Stremio Dashboard (Launcher & desktop entry)")
         print(f"      {color('✓', Colors.GREEN)} Stremio Dashboard is ready (~/.local/bin/stremio-dashboard)")
 
-    # 9. Project Manager Shortcut in Applications Menu
+    # 9. Mint Script Runner
+    runner_dir = p_dir / "mint-script-runner"
+    if runner_dir.is_dir():
+        print(f"  {color('●', Colors.CYAN)} {color('Mint Script Runner', Colors.BOLD)}: Installing Drag & Drop .sh script executor...")
+        if not dry_run:
+            launcher = bin_dir / "mint-script-runner"
+            site_runner_dir = home / ".local/lib/python3.12/site-packages/mint_script_runner"
+            site_runner_dir.mkdir(parents=True, exist_ok=True)
+            shutil.copytree(runner_dir / "src/mint_script_runner", site_runner_dir, dirs_exist_ok=True)
+
+            launcher_content = f"""#!/usr/bin/env python3
+import sys
+from mint_script_runner.main import main
+
+if __name__ == "__main__":
+    main()
+"""
+            write_executable(launcher, launcher_content)
+            # Shortcut alias
+            write_executable(bin_dir / "script-runner", launcher_content)
+
+            # Copy icon
+            svg_icon = runner_dir / "src/mint_script_runner/assets/mint-script-runner.svg"
+            if svg_icon.is_file():
+                target_icon_dir = icon_hicolor / "scalable" / "apps"
+                target_icon_dir.mkdir(parents=True, exist_ok=True)
+                shutil.copy2(svg_icon, target_icon_dir / "mint-script-runner.svg")
+
+            desktop_content = f"""[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Mint Script Runner
+GenericName=Shell Script Executor
+Comment=Drag-and-drop .sh script runner with root elevation and GitHub credentials integration
+Exec={launcher} %f
+Icon=mint-script-runner
+Terminal=false
+Categories=Projects;Utility;System;Development;
+Keywords=script;runner;shell;bash;sh;terminal;admin;pkexec;github;git;
+MimeType=application/x-shellscript;text/x-shellscript;
+StartupNotify=true
+StartupWMClass=mint-script-runner
+"""
+            write_desktop_file(app_dir / "mint-script-runner.desktop", desktop_content)
+        installed_summary.append("Mint Script Runner (Launcher, scalable SVG icon & desktop entry)")
+        print(f"      {color('✓', Colors.GREEN)} Mint Script Runner is ready (~/.local/bin/mint-script-runner)")
+
+    # 10. Project Manager Shortcut in Applications Menu
     if not dry_run:
         update_desktop = f"""[Desktop Entry]
 Name=Update All Projects
