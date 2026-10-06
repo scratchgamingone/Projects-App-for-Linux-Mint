@@ -58,15 +58,19 @@ class ScriptInspector:
             if stripped.startswith("#"):
                 continue
 
+            # Check git patterns
             for pat in ScriptInspector.GIT_PATTERNS:
                 match = pat.search(stripped)
                 if match and match.group(0) not in detected_git:
                     detected_git.append(match.group(0))
 
-            for pat in ScriptInspector.ADMIN_PATTERNS:
-                match = pat.search(stripped)
-                if match and match.group(0) not in detected_admin:
-                    detected_admin.append(match.group(0))
+            # Check admin patterns, but skip echo/printf informative logs
+            is_echo_print = stripped.startswith(("echo ", "echo\t", "printf ", "printf\t"))
+            if not is_echo_print:
+                for pat in ScriptInspector.ADMIN_PATTERNS:
+                    match = pat.search(stripped)
+                    if match and match.group(0) not in detected_admin:
+                        detected_admin.append(match.group(0))
 
         preview = "".join(lines[:12])
 

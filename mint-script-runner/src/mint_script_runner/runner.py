@@ -69,8 +69,12 @@ class ScriptRunner:
             # Setup automated GIT_ASKPASS helper
             askpass_script = Path(__file__).parent / "askpass_helper.py"
             if not askpass_script.is_file():
-                # In system install, might be in /usr/lib/mint-script-runner/
-                askpass_script = Path("/usr/lib/mint-script-runner/git-askpass.py")
+                user_askpass = Path.home() / ".local" / "lib" / "mint-script-runner" / "git-askpass.py"
+                if user_askpass.is_file():
+                    askpass_script = user_askpass
+                else:
+                    # In system install, might be in /usr/lib/mint-script-runner/
+                    askpass_script = Path("/usr/lib/mint-script-runner/git-askpass.py")
 
             if askpass_script.is_file():
                 env["GIT_ASKPASS"] = str(askpass_script)

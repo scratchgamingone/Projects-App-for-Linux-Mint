@@ -304,7 +304,7 @@ class MainWindow(Gtk.Window):
         self.entry_gh_token = Gtk.Entry()
         self.entry_gh_token.set_visibility(False)
         self.entry_gh_token.set_text(self.settings.get("github_token", ""))
-        self.entry_gh_token.set_placeholder_text("ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+        self.entry_gh_token.set_placeholder_text("ghp_... or github_pat_...")
 
         self.btn_toggle_token = Gtk.Button(label="👁")
         self.btn_toggle_token.set_tooltip_text("Toggle token visibility")
@@ -323,7 +323,7 @@ class MainWindow(Gtk.Window):
         lbl_spacer.set_size_request(180, -1)
         btn_open_tokens = Gtk.LinkButton(
             uri="https://github.com/settings/tokens",
-            label="🔑 Generate New Personal Access Token on GitHub (Classic with 'repo' scope)"
+            label="🔑 Generate Token (Classic with 'repo' scope OR Fine-grained with 'Contents: Read and write')"
         )
         token_help_box.pack_start(lbl_spacer, False, False, 0)
         token_help_box.pack_start(btn_open_tokens, False, False, 0)
