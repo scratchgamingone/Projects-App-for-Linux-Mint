@@ -1,0 +1,23 @@
+{
+  "name": "spicetify-audio-stats",
+  "version": "1.0.0",
+  "description": "Real-time Audio Features HUD, Session Distribution Statistics (Mean, Std Dev, Correlation), and CSV Export for Spotify",
+  "main": "audioStats.js",
+  "scripts": {
+    "install-ext": "./install.sh",
+    "uninstall-ext": "./uninstall.sh",
+    "apply": "spicetify apply",
+    "restart": "spicetify restart"
+  },
+  "keywords": [
+    "spicetify",
+    "spotify",
+    "audio-features",
+    "statistics",
+    "bpm",
+    "camelot-key",
+    "session-analytics"
+  ],
+  "author": "Sam",
+  "license": "MIT"
+}
