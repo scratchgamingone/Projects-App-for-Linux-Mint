@@ -9,7 +9,7 @@ set -eo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "${SCRIPT_DIR}"
 
-DEFAULT_REPO_NAME="scratchgamingone/Projects-App-for-Linux-Mint"
+DEFAULT_REPO_NAME="YOur Reop name"
 HTTPS_REMOTE_URL="https://github.com/${DEFAULT_REPO_NAME}.git"
 SSH_REMOTE_URL="git@github.com:${DEFAULT_REPO_NAME}.git"
 WEB_URL="https://github.com/${DEFAULT_REPO_NAME}"
