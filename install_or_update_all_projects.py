@@ -143,6 +143,17 @@ PROJECT_REGISTRY = {
         ],
         "binaries": ["pkexec"],
     },
+    "mint-env-manager": {
+        "name": "Mint Environment Manager",
+        "description": "System-Wide Environment (/etc/environment) and API Key Verification Manager",
+        "apt_packages": [
+            "python3",
+            "python3-gi",
+            "gir1.2-gtk-3.0",
+            "pkexec",
+        ],
+        "binaries": ["pkexec"],
+    },
     "roblox-caffeine": {
         "name": "Roblox Caffeine",
         "description": "Linux Gamepad /dev/uinput AFK Kick Preventer",
@@ -762,6 +773,23 @@ StartupWMClass=mint-script-runner
             write_desktop_file(app_dir / "mint-script-runner.desktop", desktop_content)
         installed_summary.append("Mint Script Runner (Launcher, scalable SVG icon & desktop entry)")
         print(f"      {color('✓', Colors.GREEN)} Mint Script Runner is ready (~/.local/bin/mint-script-runner)")
+
+    # 9b. Mint Environment Manager
+    env_mgr_dir = p_dir / "mint-env-manager"
+    if env_mgr_dir.is_dir():
+        print(f"  {color('●', Colors.CYAN)} {color('Mint Environment Manager', Colors.BOLD)}: Installing system-wide env & API key manager...")
+        if not dry_run:
+            install_script = env_mgr_dir / "install.sh"
+            if install_script.is_file():
+                subprocess.run(["bash", str(install_script)], cwd=str(env_mgr_dir), stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            env_desktop = app_dir / "mint-env-manager.desktop"
+            if env_desktop.is_file():
+                txt = env_desktop.read_text()
+                if "Projects;" not in txt:
+                    txt = txt.replace("Categories=", "Categories=Projects;")
+                    env_desktop.write_text(txt)
+        installed_summary.append("Mint Environment Manager (Launcher, icons & desktop entry)")
+        print(f"      {color('✓', Colors.GREEN)} Mint Environment Manager is ready (~/.local/bin/mint-env-manager)")
 
     # 10. Project Manager Shortcut in Applications Menu
     if not dry_run:

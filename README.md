@@ -57,6 +57,7 @@ Your custom applications are grouped under a dedicated **Projects** category in 
 - 🎬 **JellyScratch Server**: Embedded Jellyfin media player and live Discord monitor.
 - 🤖 **Jellyfin Discord Bot**: Live playback stats and library updates webhook broadcaster.
 - 🌐 **Stremio Dashboard**: Real-Debrid API and Discord webhook web interface.
+- 🔑 **Mint Environment Manager**: System-wide environment & API key manager with admin elevation and live validation.
 - 🔄 **Update All Projects**: One-click desktop shortcut to install or update all projects and dependencies.
 
 ---
@@ -89,6 +90,7 @@ Your custom applications are grouped under a dedicated **Projects** category in 
 | **[Seerr (Jellyseerr)](./seerr)** | Docker-based media request and discovery service for Jellyfin. | `seerr` |
 | **[Debrid Cloud](./debrid)** | Docker-based Zurg Real-Debrid mount and Rclone caching service for Jellyfin media storage. | `debrid` |
 | **[Mint Script Runner](./mint-script-runner)** | Drag & Drop .sh shell script runner with root elevation (pkexec) & GitHub credential integration. | `mint-script-runner` |
+| **[Mint Environment Manager](./mint-env-manager)** | System-wide environment & API key manager with pkexec elevation, masking, and live verification. | `mint-env-manager` |
 | **[System Scripts](./system-scripts)** | Linux Mint maintenance utilities (audio fixes, face unlock camera configuration, Jellyfin setup). | `fix-speaker` |
 
 ---

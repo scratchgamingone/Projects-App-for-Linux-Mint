@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Mint Environment Manager
+GenericName=System Environment & API Key Manager
+Comment=Manage /etc/environment and .env variables with administrator elevation and live API key verification
+Exec=mint-env-manager
+Icon=mint-env-manager
+Terminal=false
+Categories=Projects;Settings;System;Development;
+Keywords=env;environment;api;key;token;admin;sudo;pkexec;steam;github;openai;gemini;
+StartupNotify=true
+StartupWMClass=mint-env-manager
